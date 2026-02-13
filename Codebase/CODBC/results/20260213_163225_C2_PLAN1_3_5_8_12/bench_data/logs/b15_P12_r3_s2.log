@@ -1,0 +1,1582 @@
+Creating docker volume mariadb-connector-odbc-2
+mariadb-connector-odbc-2
+Creating docker network mariadb-connector-odbc-2
+4e8a5fb26a0baac6b20689264086107ec7556cf443dada87eb5c46894316801d
+def0fa59d8ad44d38c313299f1ea2dc59c60dbcd65cd94c61710c736ca81cd64
+--------------------------------------------------------------
+Get source
+--------------------------------------------------------------
+Cloning into '.'...
+HEAD is now at 3d62dc27 [misc] use DOCKER_LOGIN as user if secret available
+--------------------------------------------------------------
+Build bintar
+--------------------------------------------------------------
+CMake Warning (dev) at CMakeLists.txt:28 (PROJECT):
+  cmake_minimum_required() should be called prior to this top-level project()
+  call.  Please see the cmake-commands(7) manual for usage documentation of
+  both commands.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- The C compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- MariaDB Connector ODBC: INSTALL_BINDIR=bin
+-- MariaDB Connector ODBC: INSTALL_LIBDIR=lib/mariadb
+-- MariaDB Connector ODBC: INSTALL_PCDIR=lib/pkgconfig
+-- MariaDB Connector ODBC: INSTALL_INCLUDEDIR=include/mariadb
+-- MariaDB Connector ODBC: INSTALL_DOCDIR=docs
+-- MariaDB Connector ODBC: INSTALL_LICENSEDIR=docs
+-- MariaDB Connector ODBC: INSTALL_PLUGINDIR=lib/mariadb/plugin
+-- MariaDB Connector ODBC: INSTALL_PLUGINDIR_CLIENT=lib/mariadb/plugin
+-- Configuring to build without SSL support
+-- Running C/C cmake scripts
+-- Found Git: /usr/bin/git (found version "2.43.0") 
+Submodule 'libmariadb' (https://github.com/MariaDB/mariadb-connector-c.git) registered for path 'libmariadb'
+Cloning into '/home/buildbot/odbc_build/source/libmariadb'...
+Submodule path 'libmariadb': checked out '9e2b0370de0076461ebae71a06acfb7a9364395b'
+== Configuring MariaDB Connector/C
+-- Found CURL: /usr/lib/x86_64-linux-gnu/libcurl.so (found version "8.5.0")  
+-- Performing Test HAS_-Wunused_FLAG
+-- Performing Test HAS_-Wunused_FLAG - Success
+-- Performing Test HAS_-Wlogical-op_FLAG
+-- Performing Test HAS_-Wlogical-op_FLAG - Success
+-- Performing Test HAS_-Wno-uninitialized_FLAG
+-- Performing Test HAS_-Wno-uninitialized_FLAG - Success
+-- Performing Test HAS_-Wall_FLAG
+-- Performing Test HAS_-Wall_FLAG - Success
+-- Performing Test HAS_-Wextra_FLAG
+-- Performing Test HAS_-Wextra_FLAG - Success
+-- Performing Test HAS_-Wformat-security_FLAG
+-- Performing Test HAS_-Wformat-security_FLAG - Success
+-- Performing Test HAS_-Wno-init-self_FLAG
+-- Performing Test HAS_-Wno-init-self_FLAG - Success
+-- Performing Test HAS_-Wwrite-strings_FLAG
+-- Performing Test HAS_-Wwrite-strings_FLAG - Success
+-- Performing Test HAS_-Wshift-count-overflow_FLAG
+-- Performing Test HAS_-Wshift-count-overflow_FLAG - Success
+-- Performing Test HAS_-Wdeclaration-after-statement_FLAG
+-- Performing Test HAS_-Wdeclaration-after-statement_FLAG - Success
+-- Performing Test HAS_-Wno-undef_FLAG
+-- Performing Test HAS_-Wno-undef_FLAG - Success
+-- Performing Test HAS_-Wno-unknown-pragmas_FLAG
+-- Performing Test HAS_-Wno-unknown-pragmas_FLAG - Success
+-- Performing Test HAS_-Wno-stringop-truncation_FLAG
+-- Performing Test HAS_-Wno-stringop-truncation_FLAG - Success
+Submodule 'docs' (https://github.com/mariadb-corporation/mariadb-connector-c.wiki.git) registered for path 'docs'
+Cloning into '/home/buildbot/odbc_build/source/libmariadb/docs'...
+Submodule path 'docs': checked out '7e12bcea26c8a7fe5ee77f5e5341011bb9d7e084'
+-- MariaDB Connector C: INSTALL_BINDIR=bin
+-- MariaDB Connector C: INSTALL_LIBDIR=lib/mariadb
+-- MariaDB Connector C: INSTALL_PCDIR=lib/pkgconfig
+-- MariaDB Connector C: INSTALL_INCLUDEDIR=include/mariadb
+-- MariaDB Connector C: INSTALL_DOCSDIR=
+-- MariaDB Connector C: INSTALL_PLUGINDIR=lib/mariadb/plugin
+-- MariaDB Connector C: INSTALL_MANDIR=man
+-- MariaDB Connector C: LIBMARIADB_STATIC_NAME mariadbclient
+-- Found ZSTD: /usr/lib/x86_64-linux-gnu/libzstd.so  
+-- Looking for sys/types.h
+-- Looking for sys/types.h - found
+-- Looking for stdint.h
+-- Looking for stdint.h - found
+-- Looking for stddef.h
+-- Looking for stddef.h - found
+-- Check size of off64_t
+-- Check size of off64_t - done
+-- Looking for fseeko
+-- Looking for fseeko - found
+-- Looking for unistd.h
+-- Looking for unistd.h - found
+-- Looking for include file alloca.h
+-- Looking for include file alloca.h - found
+-- Looking for include file dlfcn.h
+-- Looking for include file dlfcn.h - found
+-- Looking for include file fcntl.h
+-- Looking for include file fcntl.h - found
+-- Looking for include file float.h
+-- Looking for include file float.h - found
+-- Looking for include file limits.h
+-- Looking for include file limits.h - found
+-- Looking for include file linux/limits.h
+-- Looking for include file linux/limits.h - found
+-- Looking for include file pwd.h
+-- Looking for include file pwd.h - found
+-- Looking for include file select.h
+-- Looking for include file select.h - not found
+-- Looking for include file signal.h
+-- Looking for include file signal.h - found
+-- Looking for include file stdlib.h
+-- Looking for include file stdlib.h - found
+-- Looking for include file string.h
+-- Looking for include file string.h - found
+-- Looking for include file sys/ioctl.h
+-- Looking for include file sys/ioctl.h - found
+-- Looking for include file sys/select.h
+-- Looking for include file sys/select.h - found
+-- Looking for include file sys/socket.h
+-- Looking for include file sys/socket.h - found
+-- Looking for include file sys/stat.h
+-- Looking for include file sys/stat.h - found
+-- Looking for include file sys/un.h
+-- Looking for include file sys/un.h - found
+-- Looking for include file unistd.h
+-- Looking for include file unistd.h - found
+-- Looking for include file ucontext.h
+-- Looking for include file ucontext.h - found
+-- Looking for alloca
+-- Looking for alloca - not found
+-- Looking for dlerror
+-- Looking for dlerror - found
+-- Looking for dlopen
+-- Looking for dlopen - found
+-- Looking for fcntl
+-- Looking for fcntl - found
+-- Looking for memcpy
+-- Looking for memcpy - found
+-- Looking for nl_langinfo
+-- Looking for nl_langinfo - found
+-- Looking for setlocale
+-- Looking for setlocale - found
+-- Looking for poll
+-- Looking for poll - found
+-- Looking for getpwuid
+-- Looking for getpwuid - found
+-- Looking for makecontext
+-- Looking for makecontext - found
+-- Looking for cuserid
+-- Looking for cuserid - found
+-- Check size of char *
+-- Check size of char * - done
+-- Check size of int
+-- Check size of int - done
+-- Check size of long
+-- Check size of long - done
+-- Check size of long long
+-- Check size of long long - done
+-- Check size of size_t
+-- Check size of size_t - done
+-- Check size of uint
+-- Check size of uint - done
+-- Check size of uint
+-- Check size of uint - done
+-- Check size of ulong
+-- Check size of ulong - done
+-- Check size of int8
+-- Check size of int8 - failed
+-- Check size of uint8
+-- Check size of uint8 - failed
+-- Check size of int16
+-- Check size of int16 - failed
+-- Check size of uint16
+-- Check size of uint16 - failed
+-- Check size of int32
+-- Check size of int32 - failed
+-- Check size of uint32
+-- Check size of uint32 - failed
+-- Check size of int64
+-- Check size of int64 - failed
+-- Check size of uint64
+-- Check size of uint64 - failed
+-- Check size of socklen_t
+-- Check size of socklen_t - failed
+-- Performing Test SOCKET_SIZE_FOUND_socklen_t
+-- Performing Test SOCKET_SIZE_FOUND_socklen_t - Success
+-- Looking for floor
+-- Looking for floor - not found
+-- Looking for floor in m
+-- Looking for floor in m - found
+-- Looking for pthread_getspecific
+-- Looking for pthread_getspecific - found
+-- Looking for gethostbyname_r
+-- Looking for gethostbyname_r - found
+-- Looking for setsockopt
+-- Looking for setsockopt - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Found OpenSSL: /usr/lib/x86_64-linux-gnu/libcrypto.so (found version "3.0.13")  
+-- TLS library/version: OpenSSL 3.0.13
+-- SYSTEM_LIBS dl;m;dl;m;/usr/lib/x86_64-linux-gnu/libssl.so;/usr/lib/x86_64-linux-gnu/libcrypto.so
+CMake Warning (dev) at libmariadb/cmake/FindGSSAPI.cmake:64 (exec_program):
+  Policy CMP0153 is not set: The exec_program command should not be called.
+  Run "cmake --help-policy CMP0153" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  Use execute_process() instead.
+Call Stack (most recent call first):
+  libmariadb/CMakeLists.txt:434 (INCLUDE)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at libmariadb/cmake/FindGSSAPI.cmake:74 (exec_program):
+  Policy CMP0153 is not set: The exec_program command should not be called.
+  Run "cmake --help-policy CMP0153" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  Use execute_process() instead.
+Call Stack (most recent call first):
+  libmariadb/CMakeLists.txt:434 (INCLUDE)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+CMake Warning (dev) at libmariadb/cmake/FindGSSAPI.cmake:78 (exec_program):
+  Policy CMP0153 is not set: The exec_program command should not be called.
+  Run "cmake --help-policy CMP0153" for policy details.  Use the cmake_policy
+  command to set the policy and suppress this warning.
+
+  Use execute_process() instead.
+Call Stack (most recent call first):
+  libmariadb/CMakeLists.txt:434 (INCLUDE)
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- Found GSSAPI: -L/usr/lib/x86_64-linux-gnu/mit-krb5 -Wl,-Bsymbolic-functions -flto=auto -ffat-lto-objects -Wl,-z,relro -lgssapi_krb5 -lkrb5 -lk5crypto -lcom_err
+-- Performing Test have__Wl___as_needed
+-- Performing Test have__Wl___as_needed - Success
+-- SYSTEM_LIBS: dl;m;dl;m;/usr/lib/x86_64-linux-gnu/libssl.so;/usr/lib/x86_64-linux-gnu/libcrypto.so
+-- SYSTEM processor: x86_64
+-- MariaDB Connector/c configuration:
+-- Static PLUGINS mysql_native_password;mysql_old_password;zlib;pvio_socket
+-- Dynamic PLUGINS dialog;client_ed25519;caching_sha2_password;sha256_password;auth_gssapi_client;mysql_clear_password;zstd
+-- CPack generation: TGZ
+-- SSL support: OPENSSL Libs: /usr/lib/x86_64-linux-gnu/libssl.so;/usr/lib/x86_64-linux-gnu/libcrypto.so
+-- Zlib support: yes (using bundled zlib)
+-- ZStd support: TRUE
+-- Installation layout: DEFAULT
+-- Include files will be installed in include/mariadb
+-- Libraries will be installed in lib/mariadb
+-- Binaries will be installed in bin
+-- Documentation included from 
+-- Required: dl;m
+-- Configuring to install libmariadb to lib/mariadb
+-- Configuring to install mysql_clear_password to lib/mariadb/plugin
+-- Configuring to install dialog to lib/mariadb/plugin
+-- Configuring to install client_ed25519 to lib/mariadb/plugin
+-- Configuring to install sha256_password to lib/mariadb/plugin
+-- Configuring to install caching_sha2_password to lib/mariadb/plugin
+-- odbc_config is not found 
+-- Found ODBC Driver Manager includes: /usr/include
+-- Found ODBC Driver Manager libraries: /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu
+-- Found DM header: /usr/include/sql.h
+-- Checking if SQLColAttribute expects SQLPOINTER FALSE
+-- Linking Connector/C library dynamically(libmariadb)
+-- Version script: /home/buildbot/odbc_build/source/maodbc.def
+-- All linked targets/external dependencies: libmariadb odbcinst m
+-- Configuring to install libmaodbc.pc
+-- Configuring tests for linking against the DM library
+-- Configurig Test Driver: maodbc_test, Test DSN: maodbc_test, tcp://root@localhost:3306/test socket: 
+-- Package Name: mariadb-connector-odbc-3.1.23-ce6120b28b48 Generator: TGZ
+-- License File: /home/buildbot/odbc_build/source/COPYING
+-- ReadMe File: /home/buildbot/odbc_build/source/README
+-- Source Package Filename: mariadb-connector-odbc-3.1.23-src.TGZ
+-- Configuring done (6.8s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/buildbot/odbc_build/build/bintar
+[  0%] Building C object test/CMakeFiles/odbc_tran.dir/tran.c.o
+[  0%] Building C object test/CMakeFiles/odbc_blob.dir/blob.c.o
+[  0%] Building C object libmariadb/CMakeFiles/sha256_password.dir/plugins/auth/sha256_pw.c.o
+[  1%] Building C object libmariadb/CMakeFiles/mysql_clear_password.dir/plugins/auth/mariadb_cleartext.c.o
+[  2%] Building C object test/CMakeFiles/odbc_basic.dir/basic.c.o
+[  4%] Building C object libmariadb/CMakeFiles/caching_sha2_password.dir/plugins/auth/caching_sha2_pw.c.o
+[  4%] Building C object test/CMakeFiles/odbc_desc.dir/desc.c.o
+[  5%] Building C object libmariadb/CMakeFiles/dialog.dir/plugins/auth/dialog.c.o
+[  5%] Building C object test/CMakeFiles/odbc_types.dir/types.c.o
+[  6%] Building C object test/CMakeFiles/odbc_info.dir/info.c.o
+[  6%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ed25519.c.o
+[  6%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/my_auth.c.o
+[  6%] Linking C shared module mysql_clear_password.so
+[  6%] Building C object libmariadb/CMakeFiles/dialog.dir/libmariadb/get_password.c.o
+[  6%] Building C object libmariadb/CMakeFiles/caching_sha2_password.dir/libmariadb/secure/openssl_crypt.c.o
+[  7%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_0.c.o
+[  7%] Built target mysql_clear_password
+[  7%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_isnegative.c.o
+[  9%] Linking C shared module sha256_password.so
+[ 10%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_sub.c.o
+[ 10%] Building C object test/CMakeFiles/odbc_catalog1.dir/catalog1.c.o
+[ 11%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/auth/old_password.c.o
+[ 11%] Linking C shared module dialog.so
+[ 12%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_p1p1_to_p2.c.o
+[ 12%] Built target dialog
+[ 13%] Linking C shared module caching_sha2_password.so
+[ 13%] Building C object test/CMakeFiles/odbc_catalog1.dir/__/ma_conv_charset.c.o
+[ 13%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_p3_to_cached.c.o
+[ 13%] Built target sha256_password
+[ 14%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/open.c.o
+[ 15%] Building C object test/CMakeFiles/odbc_catalog2.dir/catalog2.c.o
+[ 15%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/compress/c_zlib.c.o
+[ 15%] Building C object test/CMakeFiles/odbc_info.dir/__/ma_conv_charset.c.o
+[ 15%] Built target caching_sha2_password
+[ 15%] Building C object test/CMakeFiles/odbc_catalog2.dir/__/ma_conv_charset.c.o
+[ 15%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_1.c.o
+[ 17%] Building C object test/CMakeFiles/odbc_tran.dir/__/ma_conv_charset.c.o
+[ 17%] Building C object test/CMakeFiles/odbc_basic.dir/__/ma_conv_charset.c.o
+[ 18%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_isnonzero.c.o
+[ 19%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/plugins/pvio/pvio_socket.c.o
+[ 19%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_array.c.o
+[ 19%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_tobytes.c.o
+[ 19%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_p1p1_to_p3.c.o
+[ 19%] Linking C executable odbc_tran
+[ 20%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_p3_to_p2.c.o
+[ 20%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/sc_muladd.c.o
+[ 20%] Built target odbc_tran
+[ 21%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_add.c.o
+[ 21%] Building C object test/CMakeFiles/odbc_use_result.dir/use_result.c.o
+[ 22%] Building C object test/CMakeFiles/odbc_scroll.dir/scroll.c.o
+[ 22%] Building C object test/CMakeFiles/odbc_desc.dir/__/ma_conv_charset.c.o
+[ 23%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_charset.c.o
+[ 23%] Building C object test/CMakeFiles/odbc_scroll.dir/__/ma_conv_charset.c.o
+[ 25%] Linking C executable odbc_desc
+[ 25%] Building C object test/CMakeFiles/odbc_use_result.dir/__/ma_conv_charset.c.o
+[ 25%] Built target odbc_desc
+[ 25%] Building C object test/CMakeFiles/odbc_bulk.dir/bulk.c.o
+[ 25%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_mul.c.o
+[ 26%] Building C object test/CMakeFiles/odbc_types.dir/__/ma_conv_charset.c.o
+[ 27%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_add.c.o
+[ 27%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_decimal.c.o
+[ 27%] Building C object test/CMakeFiles/odbc_blob.dir/__/ma_conv_charset.c.o
+[ 27%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_p2_0.c.o
+[ 27%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_precomp_0.c.o
+[ 28%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/sc_reduce.c.o
+[ 28%] Linking C executable odbc_types
+[ 28%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_cmov.c.o
+[ 29%] Linking C executable odbc_blob
+[ 29%] Built target odbc_types
+[ 30%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_neg.c.o
+[ 31%] Building C object test/CMakeFiles/odbc_prepare.dir/prepare.c.o
+[ 31%] Built target odbc_blob
+[ 31%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_double_scalarmult.c.o
+[ 31%] Building C object test/CMakeFiles/odbc_datetime.dir/datetime.c.o
+[ 31%] Linking C executable odbc_info
+[ 31%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_hashtbl.c.o
+[ 32%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_net.c.o
+[ 34%] Built target odbc_info
+[ 34%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_p2_dbl.c.o
+[ 34%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_charset.c.o
+[ 34%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_scalarmult_base.c.o
+[ 35%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_time.c.o
+[ 35%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/sign.c.o
+[ 36%] Linking C executable odbc_use_result
+[ 37%] Linking C executable odbc_scroll
+[ 37%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_default.c.o
+[ 37%] Built target odbc_use_result
+[ 38%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_copy.c.o
+[ 40%] Building C object test/CMakeFiles/odbc_curext.dir/curext.c.o
+[ 40%] Building C object test/CMakeFiles/odbc_keys.dir/keys.c.o
+[ 40%] Built target odbc_scroll
+[ 40%] Building C object test/CMakeFiles/odbc_relative.dir/relative.c.o
+[ 42%] Building C object test/CMakeFiles/odbc_unicode.dir/unicode.c.o
+[ 42%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_pow22523.c.o
+[ 43%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_frombytes.c.o
+[ 44%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_errmsg.c.o
+[ 44%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_p3_0.c.o
+[ 45%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_sub.c.o
+[ 46%] Linking C executable odbc_basic
+[ 46%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/verify.c.o
+[ 46%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_lib.c.o
+[ 46%] Built target odbc_basic
+[ 46%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_list.c.o
+[ 46%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_frombytes.c.o
+[ 47%] Building C object test/CMakeFiles/odbc_bulk.dir/__/ma_conv_charset.c.o
+[ 48%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_sq2.c.o
+[ 48%] Linking C executable odbc_catalog1
+[ 48%] Building C object test/CMakeFiles/odbc_curext.dir/__/ma_conv_charset.c.o
+[ 48%] Linking C executable odbc_bulk
+[ 48%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_madd.c.o
+[ 48%] Built target odbc_catalog1
+[ 50%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_pvio.c.o
+[ 50%] Built target odbc_bulk
+[ 51%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_p3_dbl.c.o
+[ 51%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_tls.c.o
+[ 51%] Building C object test/CMakeFiles/odbc_prepare.dir/__/ma_conv_charset.c.o
+[ 51%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_tobytes.c.o
+[ 51%] Building C object test/CMakeFiles/odbc_keys.dir/__/ma_conv_charset.c.o
+[ 52%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_invert.c.o
+[ 52%] Building C object test/CMakeFiles/odbc_unicode.dir/__/ma_conv_charset.c.o
+[ 52%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/fe_sq.c.o
+[ 52%] Building C object test/CMakeFiles/odbc_relative.dir/__/ma_conv_charset.c.o
+[ 53%] Linking C executable odbc_keys
+[ 53%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_msub.c.o
+[ 54%] Linking C executable odbc_prepare
+[ 55%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/ge_p3_tobytes.c.o
+[ 55%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/plugins/auth/ref10/keypair.c.o
+[ 56%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_alloc.c.o
+[ 56%] Building C object test/CMakeFiles/odbc_cursor.dir/cursor.c.o
+[ 56%] Built target odbc_keys
+[ 56%] Built target odbc_prepare
+[ 57%] Building C object test/CMakeFiles/odbc_cursor.dir/__/ma_conv_charset.c.o
+[ 59%] Building C object test/CMakeFiles/odbc_datetime.dir/__/ma_conv_charset.c.o
+[ 59%] Building C object test/CMakeFiles/odbc_dyn_cursor.dir/dyn_cursor.c.o
+[ 60%] Linking C executable odbc_curext
+[ 61%] Building C object libmariadb/CMakeFiles/client_ed25519.dir/libmariadb/secure/openssl_crypt.c.o
+[ 61%] Built target odbc_curext
+[ 61%] Building C object test/CMakeFiles/odbc_dyn_cursor.dir/__/ma_conv_charset.c.o
+[ 61%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_compress.c.o
+[ 61%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_password.c.o
+[ 62%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_init.c.o
+[ 62%] Linking C shared module client_ed25519.so
+[ 62%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_ll2str.c.o
+[ 63%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_sha1.c.o
+[ 63%] Building C object test/CMakeFiles/odbc_error.dir/error.c.o
+[ 64%] Linking C executable odbc_relative
+[ 64%] Built target client_ed25519
+[ 64%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_stmt.c.o
+[ 65%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_loaddata.c.o
+[ 67%] Building C object test/CMakeFiles/odbc_error.dir/__/ma_conv_charset.c.o
+[ 67%] Built target odbc_relative
+[ 67%] Building C object test/CMakeFiles/odbc_param.dir/param.c.o
+[ 67%] Building C object test/CMakeFiles/odbc_result1.dir/result1.c.o
+[ 68%] Building C object test/CMakeFiles/odbc_result1.dir/__/ma_conv_charset.c.o
+[ 68%] Linking C executable odbc_datetime
+[ 69%] Building C object test/CMakeFiles/odbc_param.dir/__/ma_conv_charset.c.o
+[ 70%] Building C object test/CMakeFiles/odbc_result2.dir/result2.c.o
+[ 70%] Built target odbc_datetime
+[ 70%] Building C object test/CMakeFiles/odbc_multistatement.dir/multistatement.c.o
+[ 70%] Building C object test/CMakeFiles/odbc_result2.dir/__/ma_conv_charset.c.o
+[ 70%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_stmt_codec.c.o
+[ 71%] Linking C executable odbc_catalog2
+[ 72%] Linking C executable odbc_dyn_cursor
+[ 73%] Building C object test/CMakeFiles/odbc_multistatement.dir/__/ma_conv_charset.c.o
+[ 73%] Built target odbc_catalog2
+[ 73%] Built target odbc_dyn_cursor
+[ 75%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_string.c.o
+[ 75%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_dtoa.c.o
+[ 75%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_rpl.c.o
+[ 75%] Built target DEPENDENCIES_FOR_PACKAGE
+[ 76%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_client_plugin.c.o
+[ 76%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_io.c.o
+[ 76%] Linking C executable odbc_error
+[ 77%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/secure/openssl.c.o
+[ 77%] Built target odbc_error
+[ 77%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/adler32.c.o
+[ 78%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/compress.c.o
+[ 78%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/crc32.c.o
+[ 78%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/deflate.c.o
+[ 79%] Linking C executable odbc_unicode
+[ 80%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/gzclose.c.o
+[ 80%] Built target odbc_unicode
+[ 80%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/gzlib.c.o
+[ 81%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/gzread.c.o
+[ 81%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/gzwrite.c.o
+[ 82%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/infback.c.o
+[ 82%] Linking C executable odbc_multistatement
+[ 82%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/inflate.c.o
+[ 82%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/inffast.c.o
+[ 84%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/inftrees.c.o
+[ 84%] Built target odbc_multistatement
+[ 84%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/trees.c.o
+[ 85%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/uncompr.c.o
+[ 85%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/__/external/zlib/zutil.c.o
+[ 86%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/mariadb_async.c.o
+[ 86%] Linking C executable odbc_param
+[ 86%] Building C object libmariadb/libmariadb/CMakeFiles/mariadb_obj.dir/ma_context.c.o
+[ 86%] Built target odbc_param
+[ 86%] Linking C executable odbc_result2
+[ 86%] Built target odbc_result2
+[ 86%] Linking C executable odbc_result1
+[ 86%] Built target odbc_result1
+[ 86%] Built target mariadb_obj
+[ 87%] Linking C shared library libmariadb.so
+[ 87%] Linking C static library libmariadbclient.a
+[ 87%] Built target libmariadb
+[ 87%] Built target mariadbclient
+[ 87%] Building C object test/CMakeFiles/odbc_connstring.dir/__/ma_conv_charset.c.o
+[ 87%] Building C object test/CMakeFiles/odbc_connstring.dir/connstring.c.o
+[ 88%] Building C object test/CMakeFiles/odbc_connstring.dir/__/ma_dsn.c.o
+[ 89%] Building C object CMakeFiles/maodbc.dir/ma_connection.c.o
+[ 90%] Building C object CMakeFiles/maodbc.dir/ma_dsn.c.o
+[ 92%] Building C object CMakeFiles/maodbc.dir/ma_api_internal.c.o
+[ 92%] Building C object CMakeFiles/maodbc.dir/ma_debug.c.o
+[ 92%] Building C object CMakeFiles/maodbc.dir/ma_error.c.o
+[ 92%] Building C object CMakeFiles/maodbc.dir/ma_driver.c.o
+[ 92%] Building C object CMakeFiles/maodbc.dir/odbc_3_api.c.o
+[ 92%] Building C object CMakeFiles/maodbc.dir/ma_helper.c.o
+[ 93%] Building C object CMakeFiles/maodbc.dir/ma_info.c.o
+[ 93%] Linking C executable odbc_cursor
+[ 93%] Building C object CMakeFiles/maodbc.dir/ma_environment.c.o
+[ 94%] Building C object CMakeFiles/maodbc.dir/ma_parse.c.o
+[ 94%] Built target odbc_cursor
+[ 94%] Building C object CMakeFiles/maodbc.dir/ma_catalog.c.o
+[ 94%] Building C object CMakeFiles/maodbc.dir/ma_statement.c.o
+[ 95%] Building C object CMakeFiles/maodbc.dir/ma_desc.c.o
+[ 95%] Building C object CMakeFiles/maodbc.dir/ma_string.c.o
+[ 96%] Building C object CMakeFiles/maodbc.dir/ma_result.c.o
+[ 96%] Building C object CMakeFiles/maodbc.dir/ma_common.c.o
+[ 97%] Building C object CMakeFiles/maodbc.dir/ma_server.c.o
+[ 97%] Building C object CMakeFiles/maodbc.dir/ma_legacy_helpers.c.o
+[ 97%] Building C object CMakeFiles/maodbc.dir/ma_typeconv.c.o
+[ 98%] Building C object CMakeFiles/maodbc.dir/ma_bulk.c.o
+[ 98%] Building C object CMakeFiles/maodbc.dir/ma_platform_posix.c.o
+[100%] Building C object CMakeFiles/maodbc.dir/ma_conv_charset.c.o
+[100%] Linking C executable odbc_connstring
+[100%] Built target odbc_connstring
+[100%] Linking C shared library libmaodbc.so
+[100%] Built target maodbc
+Run CPack packaging tool...
+CPack: Create package using TGZ
+CPack: Install projects
+CPack: - Run preinstall target for: mariadb_connector_odbc
+CPack: - Install project: mariadb_connector_odbc []
+CPack: Create package
+CPack: - package: /home/buildbot/odbc_build/build/bintar/mariadb-connector-odbc-3.1.23-ce6120b28b48.tar.gz generated.
+-rw-r--r-- 1 buildbot buildbot 1397967 Feb 13 14:54 mariadb-connector-odbc-3.1.23-ce6120b28b48.tar.gz
+--------------------------------------------------------------
+Build deb
+--------------------------------------------------------------
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease
+Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Ign:4 https://ci.mariadb.org/galera/mariadb-4.x/2f7e06fbf64016e7e1c65c3474dba43d62715e2b/gal-amd64-ubuntu-2404/debs ./ InRelease
+Get:5 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:6 http://security.ubuntu.com/ubuntu noble-security/restricted Sources [86.7 kB]
+Hit:7 https://ci.mariadb.org/galera/mariadb-4.x/2f7e06fbf64016e7e1c65c3474dba43d62715e2b/gal-amd64-ubuntu-2404/debs ./ Release
+Get:8 http://security.ubuntu.com/ubuntu noble-security/main Sources [292 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble-updates/universe Sources [663 kB]
+Ign:10 https://ci.mariadb.org/galera/mariadb-4.x/2f7e06fbf64016e7e1c65c3474dba43d62715e2b/gal-amd64-ubuntu-2404/debs ./ Release.gpg
+Get:11 http://security.ubuntu.com/ubuntu noble-security/multiverse Sources [24.1 kB]
+Get:12 http://security.ubuntu.com/ubuntu noble-security/universe Sources [423 kB]
+Get:13 http://security.ubuntu.com/ubuntu noble-security/multiverse i386 Packages [7514 B]
+Get:14 http://security.ubuntu.com/ubuntu noble-security/universe i386 Packages [719 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-updates/multiverse Sources [31.8 kB]
+Get:16 http://archive.ubuntu.com/ubuntu noble-updates/restricted Sources [93.3 kB]
+Get:17 http://archive.ubuntu.com/ubuntu noble-updates/main Sources [641 kB]
+Get:18 http://archive.ubuntu.com/ubuntu noble-updates/universe i386 Packages [1268 kB]
+Get:19 http://security.ubuntu.com/ubuntu noble-security/restricted i386 Packages [30.0 kB]
+Get:20 http://security.ubuntu.com/ubuntu noble-security/main i386 Packages [467 kB]
+Get:21 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [34.8 kB]
+Get:22 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1824 kB]
+Get:23 http://archive.ubuntu.com/ubuntu noble-updates/multiverse i386 Packages [9269 B]
+Get:24 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [3295 kB]
+Get:25 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [3115 kB]
+Get:26 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1200 kB]
+Get:27 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [38.1 kB]
+Get:28 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [2203 kB]
+Get:29 http://archive.ubuntu.com/ubuntu noble-updates/restricted i386 Packages [32.8 kB]
+Get:30 http://archive.ubuntu.com/ubuntu noble-updates/main i386 Packages [729 kB]
+Get:31 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1979 kB]
+Get:32 http://archive.ubuntu.com/ubuntu noble-backports/main Sources [6760 B]
+Get:33 http://archive.ubuntu.com/ubuntu noble-backports/universe Sources [15.0 kB]
+Get:34 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [49.5 kB]
+Get:35 http://archive.ubuntu.com/ubuntu noble-backports/main i386 Packages [40.3 kB]
+Get:36 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [34.6 kB]
+Get:37 http://archive.ubuntu.com/ubuntu noble-backports/universe i386 Packages [18.8 kB]
+Fetched 19.8 MB in 1s (14.2 MB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+107 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libmariadb3 mariadb-common mysql-common
+The following NEW packages will be installed:
+  libmariadb-dev libmariadb3 mariadb-common mysql-common
+0 upgraded, 4 newly installed, 0 to remove and 107 not upgraded.
+Need to get 506 kB of archives.
+After this operation, 1717 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble/main amd64 mysql-common all 5.8+1.1.0build1 [6746 B]
+Get:2 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 mariadb-common all 1:10.11.14-0ubuntu0.24.04.1 [28.6 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libmariadb3 amd64 1:10.11.14-0ubuntu0.24.04.1 [196 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libmariadb-dev amd64 1:10.11.14-0ubuntu0.24.04.1 [274 kB]
+debconf: unable to initialize frontend: Dialog
+debconf: (TERM is not set, so the dialog frontend is not usable.)
+debconf: falling back to frontend: Readline
+debconf: unable to initialize frontend: Readline
+debconf: (This frontend requires a controlling tty.)
+debconf: falling back to frontend: Teletype
+dpkg-preconfigure: unable to re-open stdin: 
+Fetched 506 kB in 0s (1175 kB/s)
+Selecting previously unselected package mysql-common.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 66876 files and directories currently installed.)
+Preparing to unpack .../mysql-common_5.8+1.1.0build1_all.deb ...
+Unpacking mysql-common (5.8+1.1.0build1) ...
+Selecting previously unselected package mariadb-common.
+Preparing to unpack .../mariadb-common_1%3a10.11.14-0ubuntu0.24.04.1_all.deb ...
+Unpacking mariadb-common (1:10.11.14-0ubuntu0.24.04.1) ...
+Selecting previously unselected package libmariadb3:amd64.
+Preparing to unpack .../libmariadb3_1%3a10.11.14-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking libmariadb3:amd64 (1:10.11.14-0ubuntu0.24.04.1) ...
+Selecting previously unselected package libmariadb-dev.
+Preparing to unpack .../libmariadb-dev_1%3a10.11.14-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking libmariadb-dev (1:10.11.14-0ubuntu0.24.04.1) ...
+Setting up mysql-common (5.8+1.1.0build1) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Setting up mariadb-common (1:10.11.14-0ubuntu0.24.04.1) ...
+update-alternatives: using /etc/mysql/mariadb.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Setting up libmariadb3:amd64 (1:10.11.14-0ubuntu0.24.04.1) ...
+Setting up libmariadb-dev (1:10.11.14-0ubuntu0.24.04.1) ...
+Processing triggers for man-db (2.12.0-4build2) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
+CMake Warning (dev) at CMakeLists.txt:28 (PROJECT):
+  cmake_minimum_required() should be called prior to this top-level project()
+  call.  Please see the cmake-commands(7) manual for usage documentation of
+  both commands.
+This warning is for project developers.  Use -Wno-dev to suppress it.
+
+-- The C compiler identification is GNU 13.3.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- MariaDB Connector ODBC: INSTALL_BINDIR=bin
+-- MariaDB Connector ODBC: INSTALL_LIBDIR=lib/x86_64-linux-gnu
+-- MariaDB Connector ODBC: INSTALL_PCDIR=lib/x86_64-linux-gnu/pkgconfig
+-- MariaDB Connector ODBC: INSTALL_INCLUDEDIR=include/mariadb
+-- MariaDB Connector ODBC: INSTALL_DOCDIR=share/doc/mariadb_connector_odbc
+-- MariaDB Connector ODBC: INSTALL_LICENSEDIR=share/doc/mariadb_connector_odbc
+-- MariaDB Connector ODBC: INSTALL_PLUGINDIR=lib/x86_64-linux-gnu/libmariadb/plugin
+-- MariaDB Connector ODBC: INSTALL_PLUGINDIR_CLIENT=lib/x86_64-linux-gnu/libmariadb/plugin
+-- Configuring to build without SSL support
+-- Linking against libmariadb installed on the system
+-- Looking for floor
+-- Looking for floor - not found
+-- Looking for floor in m
+-- Looking for floor in m - found
+-- odbc_config is not found 
+-- Found ODBC Driver Manager includes: /usr/include
+-- Found ODBC Driver Manager libraries: /usr/lib/x86_64-linux-gnu /usr/lib/x86_64-linux-gnu
+-- Found DM header: /usr/include/sql.h
+-- Checking if SQLColAttribute expects SQLPOINTER FALSE
+-- C/C library found here /usr/lib/x86_64-linux-gnu/libmariadb.so
+-- C/C headers have been found here /usr/include/mariadb
+-- Linking Connector/C library dynamically(/usr/lib/x86_64-linux-gnu/libmariadb.so)
+-- Version script: /home/buildbot/odbc_build/source/maodbc.def
+-- All linked targets/external dependencies: /usr/lib/x86_64-linux-gnu/libmariadb.so odbcinst m
+-- Configuring to install libmaodbc.pc
+-- Configuring tests for linking against the DM library
+-- Configurig Test Driver: maodbc_test, Test DSN: maodbc_test, tcp://root@localhost:3306/test socket: 
+-- Package Name: mariadb-connector-odbc-3.1.23-77202e29bcf3 Generator: DEB
+-- License File: /home/buildbot/odbc_build/source/COPYING
+-- ReadMe File: /home/buildbot/odbc_build/source/README
+-- Source Package Filename: mariadb-connector-odbc-3.1.23-src.TGZ
+-- Configuring done (0.3s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/buildbot/odbc_build/build/deb
+Change Dir: '/home/buildbot/odbc_build/build/deb'
+
+Run Build Command(s): /usr/bin/cmake -E env VERBOSE=1 /usr/bin/gmake -f Makefile -j12 package
+/usr/bin/cmake -S/home/buildbot/odbc_build/source -B/home/buildbot/odbc_build/build/deb --check-build-system CMakeFiles/Makefile.cmake 0
+/usr/bin/cmake -E cmake_progress_start /home/buildbot/odbc_build/build/deb/CMakeFiles /home/buildbot/odbc_build/build/deb//CMakeFiles/progress.marks
+/usr/bin/gmake  -f CMakeFiles/Makefile2 all
+gmake[1]: Entering directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f CMakeFiles/DEPENDENCIES_FOR_PACKAGE.dir/build.make CMakeFiles/DEPENDENCIES_FOR_PACKAGE.dir/depend
+/usr/bin/gmake  -f test/CMakeFiles/odbc_basic.dir/build.make test/CMakeFiles/odbc_basic.dir/depend
+/usr/bin/gmake  -f test/CMakeFiles/odbc_types.dir/build.make test/CMakeFiles/odbc_types.dir/depend
+/usr/bin/gmake  -f test/CMakeFiles/odbc_blob.dir/build.make test/CMakeFiles/odbc_blob.dir/depend
+/usr/bin/gmake  -f test/CMakeFiles/odbc_desc.dir/build.make test/CMakeFiles/odbc_desc.dir/depend
+/usr/bin/gmake  -f test/CMakeFiles/odbc_info.dir/build.make test/CMakeFiles/odbc_info.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/CMakeFiles/DEPENDENCIES_FOR_PACKAGE.dir/DependInfo.cmake "--color="
+/usr/bin/gmake  -f test/CMakeFiles/odbc_tran.dir/build.make test/CMakeFiles/odbc_tran.dir/depend
+/usr/bin/gmake  -f test/CMakeFiles/odbc_catalog1.dir/build.make test/CMakeFiles/odbc_catalog1.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_types.dir/DependInfo.cmake "--color="
+/usr/bin/gmake  -f test/CMakeFiles/odbc_catalog2.dir/build.make test/CMakeFiles/odbc_catalog2.dir/depend
+/usr/bin/gmake  -f test/CMakeFiles/odbc_use_result.dir/build.make test/CMakeFiles/odbc_use_result.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_basic.dir/DependInfo.cmake "--color="
+/usr/bin/gmake  -f test/CMakeFiles/odbc_scroll.dir/build.make test/CMakeFiles/odbc_scroll.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_desc.dir/DependInfo.cmake "--color="
+/usr/bin/gmake  -f test/CMakeFiles/odbc_bulk.dir/build.make test/CMakeFiles/odbc_bulk.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_blob.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_info.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_tran.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_catalog2.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_use_result.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_catalog1.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_scroll.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_bulk.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_basic.dir/build.make test/CMakeFiles/odbc_basic.dir/build
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_desc.dir/build.make test/CMakeFiles/odbc_desc.dir/build
+/usr/bin/gmake  -f test/CMakeFiles/odbc_info.dir/build.make test/CMakeFiles/odbc_info.dir/build
+/usr/bin/gmake  -f test/CMakeFiles/odbc_bulk.dir/build.make test/CMakeFiles/odbc_bulk.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_blob.dir/build.make test/CMakeFiles/odbc_blob.dir/build
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_types.dir/build.make test/CMakeFiles/odbc_types.dir/build
+/usr/bin/gmake  -f CMakeFiles/DEPENDENCIES_FOR_PACKAGE.dir/build.make CMakeFiles/DEPENDENCIES_FOR_PACKAGE.dir/build
+/usr/bin/gmake  -f test/CMakeFiles/odbc_tran.dir/build.make test/CMakeFiles/odbc_tran.dir/build
+/usr/bin/gmake  -f test/CMakeFiles/odbc_catalog1.dir/build.make test/CMakeFiles/odbc_catalog1.dir/build
+/usr/bin/gmake  -f test/CMakeFiles/odbc_catalog2.dir/build.make test/CMakeFiles/odbc_catalog2.dir/build
+/usr/bin/gmake  -f test/CMakeFiles/odbc_use_result.dir/build.make test/CMakeFiles/odbc_use_result.dir/build
+/usr/bin/gmake  -f test/CMakeFiles/odbc_scroll.dir/build.make test/CMakeFiles/odbc_scroll.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Nothing to be done for 'CMakeFiles/DEPENDENCIES_FOR_PACKAGE.dir/build'.
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[  2%] Building C object test/CMakeFiles/odbc_basic.dir/basic.c.o
+[  2%] Building C object test/CMakeFiles/odbc_info.dir/info.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_basic.dir/basic.c.o -MF CMakeFiles/odbc_basic.dir/basic.c.o.d -o CMakeFiles/odbc_basic.dir/basic.c.o -c /home/buildbot/odbc_build/source/test/basic.c
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_info.dir/info.c.o -MF CMakeFiles/odbc_info.dir/info.c.o.d -o CMakeFiles/odbc_info.dir/info.c.o -c /home/buildbot/odbc_build/source/test/info.c
+[  3%] Building C object test/CMakeFiles/odbc_types.dir/types.c.o
+[  4%] Building C object test/CMakeFiles/odbc_blob.dir/blob.c.o
+[  8%] Building C object test/CMakeFiles/odbc_desc.dir/desc.c.o
+[  8%] Building C object test/CMakeFiles/odbc_bulk.dir/bulk.c.o
+[  8%] Building C object test/CMakeFiles/odbc_tran.dir/tran.c.o
+[  8%] Building C object test/CMakeFiles/odbc_catalog1.dir/catalog1.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_types.dir/types.c.o -MF CMakeFiles/odbc_types.dir/types.c.o.d -o CMakeFiles/odbc_types.dir/types.c.o -c /home/buildbot/odbc_build/source/test/types.c
+[  9%] Building C object test/CMakeFiles/odbc_catalog2.dir/catalog2.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_blob.dir/blob.c.o -MF CMakeFiles/odbc_blob.dir/blob.c.o.d -o CMakeFiles/odbc_blob.dir/blob.c.o -c /home/buildbot/odbc_build/source/test/blob.c
+[  9%] Built target DEPENDENCIES_FOR_PACKAGE
+[ 10%] Building C object test/CMakeFiles/odbc_use_result.dir/use_result.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_bulk.dir/bulk.c.o -MF CMakeFiles/odbc_bulk.dir/bulk.c.o.d -o CMakeFiles/odbc_bulk.dir/bulk.c.o -c /home/buildbot/odbc_build/source/test/bulk.c
+[ 11%] Building C object test/CMakeFiles/odbc_scroll.dir/scroll.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_catalog1.dir/catalog1.c.o -MF CMakeFiles/odbc_catalog1.dir/catalog1.c.o.d -o CMakeFiles/odbc_catalog1.dir/catalog1.c.o -c /home/buildbot/odbc_build/source/test/catalog1.c
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_tran.dir/tran.c.o -MF CMakeFiles/odbc_tran.dir/tran.c.o.d -o CMakeFiles/odbc_tran.dir/tran.c.o -c /home/buildbot/odbc_build/source/test/tran.c
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_catalog2.dir/catalog2.c.o -MF CMakeFiles/odbc_catalog2.dir/catalog2.c.o.d -o CMakeFiles/odbc_catalog2.dir/catalog2.c.o -c /home/buildbot/odbc_build/source/test/catalog2.c
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_desc.dir/desc.c.o -MF CMakeFiles/odbc_desc.dir/desc.c.o.d -o CMakeFiles/odbc_desc.dir/desc.c.o -c /home/buildbot/odbc_build/source/test/desc.c
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_use_result.dir/use_result.c.o -MF CMakeFiles/odbc_use_result.dir/use_result.c.o.d -o CMakeFiles/odbc_use_result.dir/use_result.c.o -c /home/buildbot/odbc_build/source/test/use_result.c
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_scroll.dir/scroll.c.o -MF CMakeFiles/odbc_scroll.dir/scroll.c.o.d -o CMakeFiles/odbc_scroll.dir/scroll.c.o -c /home/buildbot/odbc_build/source/test/scroll.c
+[ 12%] Building C object test/CMakeFiles/odbc_basic.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_basic.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_basic.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_basic.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 13%] Building C object test/CMakeFiles/odbc_use_result.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_use_result.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_use_result.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_use_result.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 14%] Building C object test/CMakeFiles/odbc_desc.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_desc.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_desc.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_desc.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 15%] Building C object test/CMakeFiles/odbc_scroll.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_scroll.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_scroll.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_scroll.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 16%] Building C object test/CMakeFiles/odbc_catalog1.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_catalog1.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_catalog1.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_catalog1.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 17%] Building C object test/CMakeFiles/odbc_bulk.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_bulk.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_bulk.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_bulk.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 18%] Building C object test/CMakeFiles/odbc_tran.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_tran.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_tran.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_tran.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 19%] Linking C executable odbc_use_result
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_use_result.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_use_result.dir/use_result.c.o CMakeFiles/odbc_use_result.dir/__/ma_conv_charset.c.o -o odbc_use_result  -lodbc -lm -lpthread -ldl 
+[ 20%] Building C object test/CMakeFiles/odbc_info.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_info.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_info.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_info.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 21%] Linking C executable odbc_tran
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_tran.dir/link.txt --verbose=1
+[ 21%] Built target odbc_use_result
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_tran.dir/tran.c.o CMakeFiles/odbc_tran.dir/__/ma_conv_charset.c.o -o odbc_tran  -lodbc -lm -lpthread -ldl 
+[ 22%] Building C object test/CMakeFiles/odbc_catalog2.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_catalog2.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_catalog2.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_catalog2.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_prepare.dir/build.make test/CMakeFiles/odbc_prepare.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_prepare.dir/DependInfo.cmake "--color="
+[ 22%] Built target odbc_tran
+/usr/bin/gmake  -f test/CMakeFiles/odbc_datetime.dir/build.make test/CMakeFiles/odbc_datetime.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_datetime.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_prepare.dir/build.make test/CMakeFiles/odbc_prepare.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_datetime.dir/build.make test/CMakeFiles/odbc_datetime.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[ 23%] Building C object test/CMakeFiles/odbc_prepare.dir/prepare.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_prepare.dir/prepare.c.o -MF CMakeFiles/odbc_prepare.dir/prepare.c.o.d -o CMakeFiles/odbc_prepare.dir/prepare.c.o -c /home/buildbot/odbc_build/source/test/prepare.c
+[ 24%] Building C object test/CMakeFiles/odbc_datetime.dir/datetime.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_datetime.dir/datetime.c.o -MF CMakeFiles/odbc_datetime.dir/datetime.c.o.d -o CMakeFiles/odbc_datetime.dir/datetime.c.o -c /home/buildbot/odbc_build/source/test/datetime.c
+[ 25%] Building C object test/CMakeFiles/odbc_datetime.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_datetime.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_datetime.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_datetime.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 26%] Linking C executable odbc_info
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_info.dir/link.txt --verbose=1
+[ 27%] Linking C executable odbc_scroll
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_info.dir/info.c.o CMakeFiles/odbc_info.dir/__/ma_conv_charset.c.o -o odbc_info  -lodbc -lm -lpthread -ldl 
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_scroll.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_scroll.dir/scroll.c.o CMakeFiles/odbc_scroll.dir/__/ma_conv_charset.c.o -o odbc_scroll  -lodbc -lm -lpthread -ldl 
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 27%] Built target odbc_info
+/usr/bin/gmake  -f test/CMakeFiles/odbc_keys.dir/build.make test/CMakeFiles/odbc_keys.dir/depend
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_keys.dir/DependInfo.cmake "--color="
+/usr/bin/gmake  -f test/CMakeFiles/odbc_curext.dir/build.make test/CMakeFiles/odbc_curext.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_curext.dir/DependInfo.cmake "--color="
+[ 27%] Built target odbc_scroll
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_relative.dir/build.make test/CMakeFiles/odbc_relative.dir/depend
+/usr/bin/gmake  -f test/CMakeFiles/odbc_keys.dir/build.make test/CMakeFiles/odbc_keys.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_relative.dir/DependInfo.cmake "--color="
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_curext.dir/build.make test/CMakeFiles/odbc_curext.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[ 28%] Building C object test/CMakeFiles/odbc_keys.dir/keys.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_keys.dir/keys.c.o -MF CMakeFiles/odbc_keys.dir/keys.c.o.d -o CMakeFiles/odbc_keys.dir/keys.c.o -c /home/buildbot/odbc_build/source/test/keys.c
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_relative.dir/build.make test/CMakeFiles/odbc_relative.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[ 29%] Building C object test/CMakeFiles/odbc_curext.dir/curext.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_curext.dir/curext.c.o -MF CMakeFiles/odbc_curext.dir/curext.c.o.d -o CMakeFiles/odbc_curext.dir/curext.c.o -c /home/buildbot/odbc_build/source/test/curext.c
+[ 30%] Building C object test/CMakeFiles/odbc_relative.dir/relative.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_relative.dir/relative.c.o -MF CMakeFiles/odbc_relative.dir/relative.c.o.d -o CMakeFiles/odbc_relative.dir/relative.c.o -c /home/buildbot/odbc_build/source/test/relative.c
+[ 31%] Building C object test/CMakeFiles/odbc_blob.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_blob.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_blob.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_blob.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 32%] Linking C executable odbc_bulk
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_bulk.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_bulk.dir/bulk.c.o CMakeFiles/odbc_bulk.dir/__/ma_conv_charset.c.o -o odbc_bulk  -lodbc -lm -lpthread -ldl 
+[ 33%] Building C object test/CMakeFiles/odbc_types.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_types.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_types.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_types.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 34%] Linking C executable odbc_desc
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_desc.dir/link.txt --verbose=1
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_desc.dir/desc.c.o CMakeFiles/odbc_desc.dir/__/ma_conv_charset.c.o -o odbc_desc  -lodbc -lm -lpthread -ldl 
+[ 35%] Linking C executable odbc_blob
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_blob.dir/link.txt --verbose=1
+[ 35%] Built target odbc_bulk
+/usr/bin/gmake  -f test/CMakeFiles/odbc_unicode.dir/build.make test/CMakeFiles/odbc_unicode.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_unicode.dir/DependInfo.cmake "--color="
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_blob.dir/blob.c.o CMakeFiles/odbc_blob.dir/__/ma_conv_charset.c.o -o odbc_blob  -lodbc -lm -lpthread -ldl 
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_unicode.dir/build.make test/CMakeFiles/odbc_unicode.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 36%] Building C object test/CMakeFiles/odbc_unicode.dir/unicode.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_unicode.dir/unicode.c.o -MF CMakeFiles/odbc_unicode.dir/unicode.c.o.d -o CMakeFiles/odbc_unicode.dir/unicode.c.o -c /home/buildbot/odbc_build/source/test/unicode.c
+[ 36%] Built target odbc_desc
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 37%] Linking C executable odbc_types
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_types.dir/link.txt --verbose=1
+[ 38%] Building C object test/CMakeFiles/odbc_relative.dir/__/ma_conv_charset.c.o
+[ 38%] Built target odbc_blob
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_relative.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_relative.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_relative.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+/usr/bin/gmake  -f test/CMakeFiles/odbc_cursor.dir/build.make test/CMakeFiles/odbc_cursor.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_cursor.dir/DependInfo.cmake "--color="
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_types.dir/types.c.o CMakeFiles/odbc_types.dir/__/ma_conv_charset.c.o -o odbc_types  -lodbc -lm -lpthread -ldl 
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_cursor.dir/build.make test/CMakeFiles/odbc_cursor.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[ 39%] Building C object test/CMakeFiles/odbc_cursor.dir/cursor.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_cursor.dir/cursor.c.o -MF CMakeFiles/odbc_cursor.dir/cursor.c.o.d -o CMakeFiles/odbc_cursor.dir/cursor.c.o -c /home/buildbot/odbc_build/source/test/cursor.c
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 39%] Built target odbc_types
+/usr/bin/gmake  -f test/CMakeFiles/odbc_dyn_cursor.dir/build.make test/CMakeFiles/odbc_dyn_cursor.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_dyn_cursor.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_dyn_cursor.dir/build.make test/CMakeFiles/odbc_dyn_cursor.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[ 40%] Building C object test/CMakeFiles/odbc_dyn_cursor.dir/dyn_cursor.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_dyn_cursor.dir/dyn_cursor.c.o -MF CMakeFiles/odbc_dyn_cursor.dir/dyn_cursor.c.o.d -o CMakeFiles/odbc_dyn_cursor.dir/dyn_cursor.c.o -c /home/buildbot/odbc_build/source/test/dyn_cursor.c
+[ 41%] Linking C executable odbc_basic
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_basic.dir/link.txt --verbose=1
+[ 42%] Building C object test/CMakeFiles/odbc_dyn_cursor.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_dyn_cursor.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_dyn_cursor.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_dyn_cursor.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_basic.dir/basic.c.o CMakeFiles/odbc_basic.dir/__/ma_conv_charset.c.o -o odbc_basic  -lodbc -lm -lpthread -ldl 
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 42%] Built target odbc_basic
+[ 43%] Building C object test/CMakeFiles/odbc_cursor.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_cursor.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_cursor.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_cursor.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 44%] Building C object test/CMakeFiles/odbc_unicode.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_unicode.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_unicode.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_unicode.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 45%] Building C object test/CMakeFiles/odbc_keys.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_keys.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_keys.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_keys.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 46%] Building C object test/CMakeFiles/odbc_curext.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_curext.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_curext.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_curext.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 47%] Linking C executable odbc_catalog1
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_catalog1.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_catalog1.dir/catalog1.c.o CMakeFiles/odbc_catalog1.dir/__/ma_conv_charset.c.o -o odbc_catalog1  -lodbc -lm -lpthread -ldl 
+/usr/bin/gmake  -f test/CMakeFiles/odbc_error.dir/build.make test/CMakeFiles/odbc_error.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_error.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_error.dir/build.make test/CMakeFiles/odbc_error.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[ 48%] Building C object test/CMakeFiles/odbc_error.dir/error.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_error.dir/error.c.o -MF CMakeFiles/odbc_error.dir/error.c.o.d -o CMakeFiles/odbc_error.dir/error.c.o -c /home/buildbot/odbc_build/source/test/error.c
+[ 49%] Building C object test/CMakeFiles/odbc_error.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_error.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_error.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_error.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 49%] Built target odbc_catalog1
+/usr/bin/gmake  -f test/CMakeFiles/odbc_param.dir/build.make test/CMakeFiles/odbc_param.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_param.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_param.dir/build.make test/CMakeFiles/odbc_param.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[ 51%] Building C object test/CMakeFiles/odbc_param.dir/param.c.o
+[ 51%] Linking C executable odbc_curext
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_param.dir/param.c.o -MF CMakeFiles/odbc_param.dir/param.c.o.d -o CMakeFiles/odbc_param.dir/param.c.o -c /home/buildbot/odbc_build/source/test/param.c
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_curext.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_curext.dir/curext.c.o CMakeFiles/odbc_curext.dir/__/ma_conv_charset.c.o -o odbc_curext  -lodbc -lm -lpthread -ldl 
+/usr/bin/gmake  -f test/CMakeFiles/odbc_result1.dir/build.make test/CMakeFiles/odbc_result1.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_result1.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_result1.dir/build.make test/CMakeFiles/odbc_result1.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[ 51%] Built target odbc_curext
+/usr/bin/gmake  -f test/CMakeFiles/odbc_result2.dir/build.make test/CMakeFiles/odbc_result2.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_result2.dir/DependInfo.cmake "--color="
+[ 52%] Building C object test/CMakeFiles/odbc_result1.dir/result1.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_result1.dir/result1.c.o -MF CMakeFiles/odbc_result1.dir/result1.c.o.d -o CMakeFiles/odbc_result1.dir/result1.c.o -c /home/buildbot/odbc_build/source/test/result1.c
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_result2.dir/build.make test/CMakeFiles/odbc_result2.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[ 53%] Building C object test/CMakeFiles/odbc_result2.dir/result2.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_result2.dir/result2.c.o -MF CMakeFiles/odbc_result2.dir/result2.c.o.d -o CMakeFiles/odbc_result2.dir/result2.c.o -c /home/buildbot/odbc_build/source/test/result2.c
+[ 54%] Linking C executable odbc_keys
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_keys.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_keys.dir/keys.c.o CMakeFiles/odbc_keys.dir/__/ma_conv_charset.c.o -o odbc_keys  -lodbc -lm -lpthread -ldl 
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 54%] Built target odbc_keys
+/usr/bin/gmake  -f test/CMakeFiles/odbc_multistatement.dir/build.make test/CMakeFiles/odbc_multistatement.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_multistatement.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_multistatement.dir/build.make test/CMakeFiles/odbc_multistatement.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[ 55%] Building C object test/CMakeFiles/odbc_multistatement.dir/multistatement.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_multistatement.dir/multistatement.c.o -MF CMakeFiles/odbc_multistatement.dir/multistatement.c.o.d -o CMakeFiles/odbc_multistatement.dir/multistatement.c.o -c /home/buildbot/odbc_build/source/test/multistatement.c
+[ 56%] Linking C executable odbc_relative
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_relative.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_relative.dir/relative.c.o CMakeFiles/odbc_relative.dir/__/ma_conv_charset.c.o -o odbc_relative  -lodbc -lm -lpthread -ldl 
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 56%] Built target odbc_relative
+/usr/bin/gmake  -f test/CMakeFiles/odbc_connstring.dir/build.make test/CMakeFiles/odbc_connstring.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source/test /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/test /home/buildbot/odbc_build/build/deb/test/CMakeFiles/odbc_connstring.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f test/CMakeFiles/odbc_connstring.dir/build.make test/CMakeFiles/odbc_connstring.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[ 57%] Building C object test/CMakeFiles/odbc_connstring.dir/connstring.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_connstring.dir/connstring.c.o -MF CMakeFiles/odbc_connstring.dir/connstring.c.o.d -o CMakeFiles/odbc_connstring.dir/connstring.c.o -c /home/buildbot/odbc_build/source/test/connstring.c
+[ 58%] Building C object test/CMakeFiles/odbc_prepare.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_prepare.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_prepare.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_prepare.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 59%] Linking C executable odbc_prepare
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_prepare.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_prepare.dir/prepare.c.o CMakeFiles/odbc_prepare.dir/__/ma_conv_charset.c.o -o odbc_prepare  -lodbc -lm -lpthread -ldl 
+[ 60%] Linking C executable odbc_dyn_cursor
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_dyn_cursor.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_dyn_cursor.dir/dyn_cursor.c.o CMakeFiles/odbc_dyn_cursor.dir/__/ma_conv_charset.c.o -o odbc_dyn_cursor  -lodbc -lm -lpthread -ldl 
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 60%] Built target odbc_prepare
+[ 61%] Building C object test/CMakeFiles/odbc_multistatement.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_multistatement.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_multistatement.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_multistatement.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 61%] Built target odbc_dyn_cursor
+[ 62%] Building C object test/CMakeFiles/odbc_connstring.dir/__/ma_dsn.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_connstring.dir/__/ma_dsn.c.o -MF CMakeFiles/odbc_connstring.dir/__/ma_dsn.c.o.d -o CMakeFiles/odbc_connstring.dir/__/ma_dsn.c.o -c /home/buildbot/odbc_build/source/ma_dsn.c
+[ 63%] Linking C executable odbc_datetime
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_datetime.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_datetime.dir/datetime.c.o CMakeFiles/odbc_datetime.dir/__/ma_conv_charset.c.o -o odbc_datetime  -lodbc -lm -lpthread -ldl 
+[ 64%] Linking C executable odbc_catalog2
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_catalog2.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_catalog2.dir/catalog2.c.o CMakeFiles/odbc_catalog2.dir/__/ma_conv_charset.c.o -o odbc_catalog2  -lodbc -lm -lpthread -ldl 
+[ 65%] Building C object test/CMakeFiles/odbc_connstring.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_connstring.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_connstring.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_connstring.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 65%] Built target odbc_catalog2
+[ 65%] Built target odbc_datetime
+[ 66%] Building C object test/CMakeFiles/odbc_param.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_param.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_param.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_param.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 67%] Building C object test/CMakeFiles/odbc_result2.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_result2.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_result2.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_result2.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 68%] Building C object test/CMakeFiles/odbc_result1.dir/__/ma_conv_charset.c.o
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -MD -MT test/CMakeFiles/odbc_result1.dir/__/ma_conv_charset.c.o -MF CMakeFiles/odbc_result1.dir/__/ma_conv_charset.c.o.d -o CMakeFiles/odbc_result1.dir/__/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+/usr/bin/gmake  -f CMakeFiles/maodbc.dir/build.make CMakeFiles/maodbc.dir/depend
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb && /usr/bin/cmake -E cmake_depends "Unix Makefiles" /home/buildbot/odbc_build/source /home/buildbot/odbc_build/source /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb /home/buildbot/odbc_build/build/deb/CMakeFiles/maodbc.dir/DependInfo.cmake "--color="
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/gmake  -f CMakeFiles/maodbc.dir/build.make CMakeFiles/maodbc.dir/build
+gmake[2]: Entering directory '/home/buildbot/odbc_build/build/deb'
+[ 69%] Building C object CMakeFiles/maodbc.dir/ma_api_internal.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_api_internal.c.o -MF CMakeFiles/maodbc.dir/ma_api_internal.c.o.d -o CMakeFiles/maodbc.dir/ma_api_internal.c.o -c /home/buildbot/odbc_build/source/ma_api_internal.c
+[ 70%] Building C object CMakeFiles/maodbc.dir/odbc_3_api.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/odbc_3_api.c.o -MF CMakeFiles/maodbc.dir/odbc_3_api.c.o.d -o CMakeFiles/maodbc.dir/odbc_3_api.c.o -c /home/buildbot/odbc_build/source/odbc_3_api.c
+[ 71%] Building C object CMakeFiles/maodbc.dir/ma_error.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_error.c.o -MF CMakeFiles/maodbc.dir/ma_error.c.o.d -o CMakeFiles/maodbc.dir/ma_error.c.o -c /home/buildbot/odbc_build/source/ma_error.c
+[ 72%] Building C object CMakeFiles/maodbc.dir/ma_connection.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_connection.c.o -MF CMakeFiles/maodbc.dir/ma_connection.c.o.d -o CMakeFiles/maodbc.dir/ma_connection.c.o -c /home/buildbot/odbc_build/source/ma_connection.c
+[ 73%] Linking C executable odbc_error
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_error.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_error.dir/error.c.o CMakeFiles/odbc_error.dir/__/ma_conv_charset.c.o -o odbc_error  -lodbc -lm -lpthread -ldl 
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 73%] Built target odbc_error
+[ 74%] Building C object CMakeFiles/maodbc.dir/ma_helper.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_helper.c.o -MF CMakeFiles/maodbc.dir/ma_helper.c.o.d -o CMakeFiles/maodbc.dir/ma_helper.c.o -c /home/buildbot/odbc_build/source/ma_helper.c
+[ 75%] Building C object CMakeFiles/maodbc.dir/ma_debug.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_debug.c.o -MF CMakeFiles/maodbc.dir/ma_debug.c.o.d -o CMakeFiles/maodbc.dir/ma_debug.c.o -c /home/buildbot/odbc_build/source/ma_debug.c
+[ 76%] Linking C executable odbc_unicode
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_unicode.dir/link.txt --verbose=1
+[ 77%] Building C object CMakeFiles/maodbc.dir/ma_dsn.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_dsn.c.o -MF CMakeFiles/maodbc.dir/ma_dsn.c.o.d -o CMakeFiles/maodbc.dir/ma_dsn.c.o -c /home/buildbot/odbc_build/source/ma_dsn.c
+[ 78%] Linking C executable odbc_multistatement
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_unicode.dir/unicode.c.o CMakeFiles/odbc_unicode.dir/__/ma_conv_charset.c.o -o odbc_unicode  -lodbc -lm -lpthread -ldl 
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_multistatement.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_multistatement.dir/multistatement.c.o CMakeFiles/odbc_multistatement.dir/__/ma_conv_charset.c.o -o odbc_multistatement  -lodbc -lm -lpthread -ldl 
+[ 79%] Building C object CMakeFiles/maodbc.dir/ma_driver.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_driver.c.o -MF CMakeFiles/maodbc.dir/ma_driver.c.o.d -o CMakeFiles/maodbc.dir/ma_driver.c.o -c /home/buildbot/odbc_build/source/ma_driver.c
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 79%] Built target odbc_unicode
+[ 79%] Built target odbc_multistatement
+[ 80%] Building C object CMakeFiles/maodbc.dir/ma_info.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_info.c.o -MF CMakeFiles/maodbc.dir/ma_info.c.o.d -o CMakeFiles/maodbc.dir/ma_info.c.o -c /home/buildbot/odbc_build/source/ma_info.c
+[ 81%] Building C object CMakeFiles/maodbc.dir/ma_environment.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_environment.c.o -MF CMakeFiles/maodbc.dir/ma_environment.c.o.d -o CMakeFiles/maodbc.dir/ma_environment.c.o -c /home/buildbot/odbc_build/source/ma_environment.c
+[ 82%] Linking C executable odbc_connstring
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_connstring.dir/link.txt --verbose=1
+[ 83%] Building C object CMakeFiles/maodbc.dir/ma_parse.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_parse.c.o -MF CMakeFiles/maodbc.dir/ma_parse.c.o.d -o CMakeFiles/maodbc.dir/ma_parse.c.o -c /home/buildbot/odbc_build/source/ma_parse.c
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_connstring.dir/connstring.c.o CMakeFiles/odbc_connstring.dir/__/ma_dsn.c.o CMakeFiles/odbc_connstring.dir/__/ma_conv_charset.c.o -o odbc_connstring  -lodbc -lodbcinst -lmariadbclient -lm -lpthread -ldl 
+[ 84%] Linking C executable odbc_result2
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_result2.dir/link.txt --verbose=1
+[ 84%] Built target odbc_connstring
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_result2.dir/result2.c.o CMakeFiles/odbc_result2.dir/__/ma_conv_charset.c.o -o odbc_result2  -lodbc -lm -lpthread -ldl 
+[ 85%] Building C object CMakeFiles/maodbc.dir/ma_catalog.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_catalog.c.o -MF CMakeFiles/maodbc.dir/ma_catalog.c.o.d -o CMakeFiles/maodbc.dir/ma_catalog.c.o -c /home/buildbot/odbc_build/source/ma_catalog.c
+[ 86%] Building C object CMakeFiles/maodbc.dir/ma_statement.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_statement.c.o -MF CMakeFiles/maodbc.dir/ma_statement.c.o.d -o CMakeFiles/maodbc.dir/ma_statement.c.o -c /home/buildbot/odbc_build/source/ma_statement.c
+[ 87%] Building C object CMakeFiles/maodbc.dir/ma_desc.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_desc.c.o -MF CMakeFiles/maodbc.dir/ma_desc.c.o.d -o CMakeFiles/maodbc.dir/ma_desc.c.o -c /home/buildbot/odbc_build/source/ma_desc.c
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 87%] Built target odbc_result2
+[ 88%] Building C object CMakeFiles/maodbc.dir/ma_string.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_string.c.o -MF CMakeFiles/maodbc.dir/ma_string.c.o.d -o CMakeFiles/maodbc.dir/ma_string.c.o -c /home/buildbot/odbc_build/source/ma_string.c
+[ 89%] Building C object CMakeFiles/maodbc.dir/ma_result.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_result.c.o -MF CMakeFiles/maodbc.dir/ma_result.c.o.d -o CMakeFiles/maodbc.dir/ma_result.c.o -c /home/buildbot/odbc_build/source/ma_result.c
+[ 90%] Building C object CMakeFiles/maodbc.dir/ma_common.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_common.c.o -MF CMakeFiles/maodbc.dir/ma_common.c.o.d -o CMakeFiles/maodbc.dir/ma_common.c.o -c /home/buildbot/odbc_build/source/ma_common.c
+[ 91%] Linking C executable odbc_param
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_param.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_param.dir/param.c.o CMakeFiles/odbc_param.dir/__/ma_conv_charset.c.o -o odbc_param  -lodbc -lm -lpthread -ldl 
+[ 92%] Building C object CMakeFiles/maodbc.dir/ma_server.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_server.c.o -MF CMakeFiles/maodbc.dir/ma_server.c.o.d -o CMakeFiles/maodbc.dir/ma_server.c.o -c /home/buildbot/odbc_build/source/ma_server.c
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 93%] Building C object CMakeFiles/maodbc.dir/ma_legacy_helpers.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_legacy_helpers.c.o -MF CMakeFiles/maodbc.dir/ma_legacy_helpers.c.o.d -o CMakeFiles/maodbc.dir/ma_legacy_helpers.c.o -c /home/buildbot/odbc_build/source/ma_legacy_helpers.c
+[ 93%] Built target odbc_param
+[ 94%] Building C object CMakeFiles/maodbc.dir/ma_typeconv.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_typeconv.c.o -MF CMakeFiles/maodbc.dir/ma_typeconv.c.o.d -o CMakeFiles/maodbc.dir/ma_typeconv.c.o -c /home/buildbot/odbc_build/source/ma_typeconv.c
+[ 95%] Building C object CMakeFiles/maodbc.dir/ma_bulk.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_bulk.c.o -MF CMakeFiles/maodbc.dir/ma_bulk.c.o.d -o CMakeFiles/maodbc.dir/ma_bulk.c.o -c /home/buildbot/odbc_build/source/ma_bulk.c
+[ 96%] Building C object CMakeFiles/maodbc.dir/ma_platform_posix.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_platform_posix.c.o -MF CMakeFiles/maodbc.dir/ma_platform_posix.c.o.d -o CMakeFiles/maodbc.dir/ma_platform_posix.c.o -c /home/buildbot/odbc_build/source/ma_platform_posix.c
+[ 97%] Building C object CMakeFiles/maodbc.dir/ma_conv_charset.c.o
+/usr/bin/cc -DMAODBC_DEBUG -DSQLCOLATTRIB_SQLLEN_PTR -Dmaodbc_EXPORTS -I/home/buildbot/odbc_build/source -I/usr/include/mariadb -I/usr/local/include/mariadb -O2 -g -DNDEBUG -std=gnu99 -fPIC -MD -MT CMakeFiles/maodbc.dir/ma_conv_charset.c.o -MF CMakeFiles/maodbc.dir/ma_conv_charset.c.o.d -o CMakeFiles/maodbc.dir/ma_conv_charset.c.o -c /home/buildbot/odbc_build/source/ma_conv_charset.c
+[ 98%] Linking C executable odbc_result1
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_result1.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_result1.dir/result1.c.o CMakeFiles/odbc_result1.dir/__/ma_conv_charset.c.o -o odbc_result1  -lodbc -lm -lpthread -ldl 
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 98%] Built target odbc_result1
+[ 99%] Linking C executable odbc_cursor
+cd /home/buildbot/odbc_build/build/deb/test && /usr/bin/cmake -E cmake_link_script CMakeFiles/odbc_cursor.dir/link.txt --verbose=1
+/usr/bin/cc -O2 -g -DNDEBUG CMakeFiles/odbc_cursor.dir/cursor.c.o CMakeFiles/odbc_cursor.dir/__/ma_conv_charset.c.o -o odbc_cursor  -lodbc -lm -lpthread -ldl 
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[ 99%] Built target odbc_cursor
+[100%] Linking C shared library libmaodbc.so
+/usr/bin/cmake -E cmake_link_script CMakeFiles/maodbc.dir/link.txt --verbose=1
+/usr/bin/cc -fPIC -O2 -g -DNDEBUG -Wl,--version-script=/home/buildbot/odbc_build/source/maodbc.def -shared -Wl,-soname,libmaodbc.so -o libmaodbc.so CMakeFiles/maodbc.dir/odbc_3_api.c.o CMakeFiles/maodbc.dir/ma_api_internal.c.o CMakeFiles/maodbc.dir/ma_error.c.o CMakeFiles/maodbc.dir/ma_connection.c.o CMakeFiles/maodbc.dir/ma_helper.c.o CMakeFiles/maodbc.dir/ma_debug.c.o CMakeFiles/maodbc.dir/ma_dsn.c.o CMakeFiles/maodbc.dir/ma_driver.c.o CMakeFiles/maodbc.dir/ma_info.c.o CMakeFiles/maodbc.dir/ma_environment.c.o CMakeFiles/maodbc.dir/ma_parse.c.o CMakeFiles/maodbc.dir/ma_catalog.c.o CMakeFiles/maodbc.dir/ma_statement.c.o CMakeFiles/maodbc.dir/ma_desc.c.o CMakeFiles/maodbc.dir/ma_string.c.o CMakeFiles/maodbc.dir/ma_result.c.o CMakeFiles/maodbc.dir/ma_common.c.o CMakeFiles/maodbc.dir/ma_server.c.o CMakeFiles/maodbc.dir/ma_legacy_helpers.c.o CMakeFiles/maodbc.dir/ma_typeconv.c.o CMakeFiles/maodbc.dir/ma_bulk.c.o CMakeFiles/maodbc.dir/ma_platform_posix.c.o CMakeFiles/maodbc.dir/ma_conv_charset.c.o  /usr/lib/x86_64-linux-gnu/libmariadb.so -lodbcinst -lm 
+/usr/bin/cmake -DDRIVER_LIB_LOCATION=/usr/lib/x86_64-linux-gnu/libmaodbc.so -DTEST_DRIVER=maodbc_test -DFILE_IN=/home/buildbot/odbc_build/source/test/odbcinst.ini.in -DFILE_OUT=/home/buildbot/odbc_build/build/deb/test/odbcinst.ini -P /home/buildbot/odbc_build/source/cmake/ConfigureFile.cmake
+/usr/bin/cmake -DTEST_DRIVER=/usr/lib/x86_64-linux-gnu/libmaodbc.so -DTEST_DSN=maodbc_test -DTEST_PORT=3306 -DTEST_SERVER=localhost -DTEST_SOCKET= -DTEST_SCHEMA=test -DTEST_UID=root -DTEST_PASSWORD="" -DTEST_USETLS=0 -DFILE_IN=/home/buildbot/odbc_build/source/test/odbc.ini.in -DFILE_OUT=/home/buildbot/odbc_build/build/deb/test/odbc.ini -P /home/buildbot/odbc_build/source/cmake/ConfigureFile.cmake
+gmake[2]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+[100%] Built target maodbc
+gmake[1]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+/usr/bin/cmake -E cmake_progress_start /home/buildbot/odbc_build/build/deb/CMakeFiles 0
+/usr/bin/gmake  -f CMakeFiles/Makefile2 preinstall
+gmake[1]: Entering directory '/home/buildbot/odbc_build/build/deb'
+gmake[1]: Nothing to be done for 'preinstall'.
+gmake[1]: Leaving directory '/home/buildbot/odbc_build/build/deb'
+Run CPack packaging tool...
+/usr/bin/cpack --config ./CPackConfig.cmake
+CPack: Create package using DEB
+CPack: Install projects
+CPack: - Run preinstall target for: mariadb_connector_odbc
+CPack: - Install project: mariadb_connector_odbc []
+CPack: -   Install component: ODBCLibs
+CPack: -   Install component: Documentation
+CPack: -   Install component: Development
+CPack: Create package
+CPackDeb Debug: dpkg-shlibdeps --version output is 'Debian dpkg-shlibdeps version 1.22.6.
+
+This is free software; see the GNU General Public License version 2 or
+later for copying conditions. There is NO warranty.'
+CPackDeb Debug: dpkg-shlibdeps version is <1.22.6>
+CPackDeb: - Generating dependency list
+CPackDeb Debug: dpkg-shlibdeps warnings 
+
+CPackDeb Debug: Found dependency: libc6 (>= 2.38), libmariadb3 (>= 3.1.0), libodbcinst2 (>= 2.3.1) from output shlibs:Depends=libc6 (>= 2.38), libmariadb3 (>= 3.1.0), libodbcinst2 (>= 2.3.1)
+CPackDeb:Debug: CPACK_TOPLEVEL_DIRECTORY          = '/home/buildbot/odbc_build/build/deb/_CPack_Packages/Linux/DEB'
+CPackDeb:Debug: CPACK_TOPLEVEL_TAG                = 'Linux'
+CPackDeb:Debug: CPACK_TEMPORARY_DIRECTORY         = '/home/buildbot/odbc_build/build/deb/_CPack_Packages/Linux/DEB/mariadb-connector-odbc-3.1.23-77202e29bcf3/ALL_COMPONENTS_IN_ONE'
+CPackDeb:Debug: CPACK_OUTPUT_FILE_NAME            = 'mariadb-connector-odbc_3.1.23-1+maria~noble_amd64.deb'
+CPackDeb:Debug: CPACK_OUTPUT_FILE_PATH            = '/home/buildbot/odbc_build/build/deb/mariadb-connector-odbc_3.1.23-1+maria~noble_amd64.deb'
+CPackDeb:Debug: CPACK_PACKAGE_FILE_NAME           = 'mariadb-connector-odbc-3.1.23-77202e29bcf3'
+CPackDeb:Debug: CPACK_PACKAGE_INSTALL_DIRECTORY   = 'mariadb-connector-odbc 3.1.23'
+CPackDeb:Debug: CPACK_TEMPORARY_PACKAGE_FILE_NAME = '/home/buildbot/odbc_build/build/deb/_CPack_Packages/Linux/DEB/mariadb-connector-odbc_3.1.23-1+maria~noble_amd64.deb'
+CPackDeb:Debug: CPACK_DEBIAN_PACKAGE_CONTROL_STRICT_PERMISSION = 'ON'
+CPackDeb:Debug: CPACK_DEBIAN_PACKAGE_SOURCE       = ''
+CPack: - package: /home/buildbot/odbc_build/build/deb/mariadb-connector-odbc_3.1.23-1+maria~noble_amd64.deb generated.
+CPack: - package: /home/buildbot/odbc_build/build/deb/mariadb-connector-odbc-dbgsym_3.1.23-1+maria~noble_amd64.ddeb generated.
+
+-rw-rw-r-- 1 buildbot buildbot 382890 Feb 13 14:54 mariadb-connector-odbc-dbgsym_3.1.23-1+maria~noble_amd64.ddeb
+-rw-rw-r-- 1 buildbot buildbot 122728 Feb 13 14:54 mariadb-connector-odbc_3.1.23-1+maria~noble_amd64.deb
+dpkg-deb: 'mariadb-connector-odbc-dbgsym_3.1.23-1+maria~noble_amd64.ddeb' contains no control component 'mariadb-connector-odbc_3.1.23-1+maria~noble_amd64.deb'
+dpkg-deb: error: 1 requested control component is missing
+--------------------------------------------------------------
+Test bintar
+--------------------------------------------------------------
+Test project /home/buildbot/odbc_build/build/bintar/test
+      Start  1: odbc_basic
+ 1/25 Test  #1: odbc_basic .......................   Passed    9.73 sec
+      Start  2: odbc_types
+ 2/25 Test  #2: odbc_types .......................   Passed    0.25 sec
+      Start  3: odbc_blob
+ 3/25 Test  #3: odbc_blob ........................   Passed    0.44 sec
+      Start  4: odbc_desc
+ 4/25 Test  #4: odbc_desc ........................   Passed    0.09 sec
+      Start  5: odbc_info
+ 5/25 Test  #5: odbc_info ........................   Passed    0.06 sec
+      Start  6: odbc_tran
+ 6/25 Test  #6: odbc_tran ........................   Passed    0.05 sec
+      Start  7: odbc_catalog1
+ 7/25 Test  #7: odbc_catalog1 ....................   Passed    0.92 sec
+      Start  8: odbc_catalog2
+ 8/25 Test  #8: odbc_catalog2 ....................   Passed    2.47 sec
+      Start  9: odbc_use_result
+ 9/25 Test  #9: odbc_use_result ..................   Passed    3.26 sec
+      Start 10: odbc_scroll
+10/25 Test #10: odbc_scroll ......................   Passed    0.19 sec
+      Start 11: odbc_bulk
+11/25 Test #11: odbc_bulk ........................   Passed    0.22 sec
+      Start 12: odbc_prepare
+12/25 Test #12: odbc_prepare .....................   Passed    0.50 sec
+      Start 13: odbc_datetime
+13/25 Test #13: odbc_datetime ....................   Passed    0.47 sec
+      Start 14: odbc_keys
+14/25 Test #14: odbc_keys ........................   Passed    0.34 sec
+      Start 15: odbc_curext
+15/25 Test #15: odbc_curext ......................   Passed    0.18 sec
+      Start 16: odbc_relative
+16/25 Test #16: odbc_relative ....................   Passed    0.27 sec
+      Start 17: odbc_unicode
+17/25 Test #17: odbc_unicode .....................   Passed    0.62 sec
+      Start 18: odbc_cursor
+18/25 Test #18: odbc_cursor ......................   Passed    1.71 sec
+      Start 19: odbc_dyn_cursor
+19/25 Test #19: odbc_dyn_cursor ..................   Passed    0.30 sec
+      Start 20: odbc_error
+20/25 Test #20: odbc_error .......................   Passed    5.16 sec
+      Start 21: odbc_param
+21/25 Test #21: odbc_param .......................   Passed    0.26 sec
+      Start 22: odbc_result1
+22/25 Test #22: odbc_result1 .....................   Passed    0.51 sec
+      Start 23: odbc_result2
+23/25 Test #23: odbc_result2 .....................   Passed    0.49 sec
+      Start 24: odbc_multistatement
+24/25 Test #24: odbc_multistatement ..............   Passed    1.11 sec
+      Start 25: odbc_connstring
+25/25 Test #25: odbc_connstring ..................   Passed    6.01 sec
+
+100% tests passed, 0 tests failed out of 25
+
+Total Test time (real) =  35.64 sec
+--------------------------------------------------------------
+Test deb
+--------------------------------------------------------------
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Get:1 http://archive.ubuntu.com/ubuntu noble InRelease [256 kB]
+Get:2 http://security.ubuntu.com/ubuntu noble-security InRelease [126 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble-updates InRelease [126 kB]
+Get:4 http://archive.ubuntu.com/ubuntu noble-backports InRelease [126 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble/restricted amd64 Packages [117 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble/multiverse amd64 Packages [331 kB]
+Get:7 http://archive.ubuntu.com/ubuntu noble/main amd64 Packages [1808 kB]
+Get:8 http://security.ubuntu.com/ubuntu noble-security/restricted amd64 Packages [3115 kB]
+Get:9 http://archive.ubuntu.com/ubuntu noble/universe amd64 Packages [19.3 MB]
+Get:10 http://archive.ubuntu.com/ubuntu noble-updates/multiverse amd64 Packages [38.1 kB]
+Get:11 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 Packages [1979 kB]
+Get:12 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 Packages [2203 kB]
+Get:13 http://archive.ubuntu.com/ubuntu noble-updates/restricted amd64 Packages [3295 kB]
+Get:14 http://archive.ubuntu.com/ubuntu noble-backports/main amd64 Packages [49.5 kB]
+Get:15 http://archive.ubuntu.com/ubuntu noble-backports/universe amd64 Packages [34.6 kB]
+Get:16 http://security.ubuntu.com/ubuntu noble-security/multiverse amd64 Packages [34.8 kB]
+Get:17 http://security.ubuntu.com/ubuntu noble-security/universe amd64 Packages [1200 kB]
+Get:18 http://security.ubuntu.com/ubuntu noble-security/main amd64 Packages [1824 kB]
+Fetched 36.0 MB in 5s (7688 kB/s)
+Reading package lists...
+Building dependency tree...
+Reading state information...
+4 packages can be upgraded. Run 'apt list --upgradable' to see them.
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+The following additional packages will be installed:
+  libltdl7 libmariadb3 libodbcinst2 mariadb-common mysql-common
+  unixodbc-common
+The following NEW packages will be installed:
+  libltdl7 libmariadb3 libodbcinst2 mariadb-common mariadb-connector-odbc
+  mysql-common unixodbc-common
+0 upgraded, 7 newly installed, 0 to remove and 4 not upgraded.
+Need to get 311 kB/434 kB of archives.
+After this operation, 1635 kB of additional disk space will be used.
+Get:1 /home/buildbot/odbc_build/build/deb/mariadb-connector-odbc_3.1.23-1+maria~noble_amd64.deb mariadb-connector-odbc amd64 3.1.23-1+maria~noble [123 kB]
+Get:2 http://archive.ubuntu.com/ubuntu noble/main amd64 libltdl7 amd64 2.4.7-7build1 [40.3 kB]
+Get:3 http://archive.ubuntu.com/ubuntu noble/main amd64 mysql-common all 5.8+1.1.0build1 [6746 B]
+Get:4 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 mariadb-common all 1:10.11.14-0ubuntu0.24.04.1 [28.6 kB]
+Get:5 http://archive.ubuntu.com/ubuntu noble-updates/universe amd64 libmariadb3 amd64 1:10.11.14-0ubuntu0.24.04.1 [196 kB]
+Get:6 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 unixodbc-common all 2.3.12-1ubuntu0.24.04.1 [8806 B]
+Get:7 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libodbcinst2 amd64 2.3.12-1ubuntu0.24.04.1 [30.7 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 311 kB in 0s (757 kB/s)
+Selecting previously unselected package libltdl7:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4381 files and directories currently installed.)
+Preparing to unpack .../0-libltdl7_2.4.7-7build1_amd64.deb ...
+Unpacking libltdl7:amd64 (2.4.7-7build1) ...
+Selecting previously unselected package mysql-common.
+Preparing to unpack .../1-mysql-common_5.8+1.1.0build1_all.deb ...
+Unpacking mysql-common (5.8+1.1.0build1) ...
+Selecting previously unselected package mariadb-common.
+Preparing to unpack .../2-mariadb-common_1%3a10.11.14-0ubuntu0.24.04.1_all.deb ...
+Unpacking mariadb-common (1:10.11.14-0ubuntu0.24.04.1) ...
+Selecting previously unselected package libmariadb3:amd64.
+Preparing to unpack .../3-libmariadb3_1%3a10.11.14-0ubuntu0.24.04.1_amd64.deb ...
+Unpacking libmariadb3:amd64 (1:10.11.14-0ubuntu0.24.04.1) ...
+Selecting previously unselected package unixodbc-common.
+Preparing to unpack .../4-unixodbc-common_2.3.12-1ubuntu0.24.04.1_all.deb ...
+Unpacking unixodbc-common (2.3.12-1ubuntu0.24.04.1) ...
+Selecting previously unselected package libodbcinst2:amd64.
+Preparing to unpack .../5-libodbcinst2_2.3.12-1ubuntu0.24.04.1_amd64.deb ...
+Unpacking libodbcinst2:amd64 (2.3.12-1ubuntu0.24.04.1) ...
+Selecting previously unselected package mariadb-connector-odbc.
+Preparing to unpack .../6-mariadb-connector-odbc_3.1.23-1+maria~noble_amd64.deb ...
+Unpacking mariadb-connector-odbc (3.1.23-1+maria~noble) ...
+Setting up mysql-common (5.8+1.1.0build1) ...
+update-alternatives: using /etc/mysql/my.cnf.fallback to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Setting up mariadb-common (1:10.11.14-0ubuntu0.24.04.1) ...
+update-alternatives: using /etc/mysql/mariadb.cnf to provide /etc/mysql/my.cnf (my.cnf) in auto mode
+Setting up libmariadb3:amd64 (1:10.11.14-0ubuntu0.24.04.1) ...
+Setting up unixodbc-common (2.3.12-1ubuntu0.24.04.1) ...
+Setting up libltdl7:amd64 (2.4.7-7build1) ...
+Setting up libodbcinst2:amd64 (2.3.12-1ubuntu0.24.04.1) ...
+Setting up mariadb-connector-odbc (3.1.23-1+maria~noble) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
+
+WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+
+Reading package lists...
+Building dependency tree...
+Reading state information...
+Suggested packages:
+  odbc-postgresql tdsodbc
+The following NEW packages will be installed:
+  libodbc2
+0 upgraded, 1 newly installed, 0 to remove and 4 not upgraded.
+Need to get 158 kB of archives.
+After this operation, 464 kB of additional disk space will be used.
+Get:1 http://archive.ubuntu.com/ubuntu noble-updates/main amd64 libodbc2 amd64 2.3.12-1ubuntu0.24.04.1 [158 kB]
+debconf: delaying package configuration, since apt-utils is not installed
+Fetched 158 kB in 0s (527 kB/s)
+Selecting previously unselected package libodbc2:amd64.
+(Reading database ... (Reading database ... 5%(Reading database ... 10%(Reading database ... 15%(Reading database ... 20%(Reading database ... 25%(Reading database ... 30%(Reading database ... 35%(Reading database ... 40%(Reading database ... 45%(Reading database ... 50%(Reading database ... 55%(Reading database ... 60%(Reading database ... 65%(Reading database ... 70%(Reading database ... 75%(Reading database ... 80%(Reading database ... 85%(Reading database ... 90%(Reading database ... 95%(Reading database ... 100%(Reading database ... 4437 files and directories currently installed.)
+Preparing to unpack .../libodbc2_2.3.12-1ubuntu0.24.04.1_amd64.deb ...
+Unpacking libodbc2:amd64 (2.3.12-1ubuntu0.24.04.1) ...
+Setting up libodbc2:amd64 (2.3.12-1ubuntu0.24.04.1) ...
+Processing triggers for libc-bin (2.39-0ubuntu8.6) ...
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;
+1..44
+ok 1 - t_disconnect
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;
+ok 2 - t_describe_nulti
+# row_count: 52
+# row_count: 52
+ok 3 - test_CONO1
+ok 4 - test_CONO3
+# regcount regcount
+ok 5 - t_count
+ok 6 - Simple test
+ok 7 - Simple test1
+ok 8 - select1000
+ok 9 - simple_2
+ok 10 - test_reconnect
+ok 11 - bug19823
+ok 12 - t_basic
+ok 13 - t_reconnect
+ok 14 - charset_utf8
+ok 15 - charset_gbk
+ok 16 - t_bug30774
+ok 17 - t_bug30983
+# OutString Length: 43
+ok 18 - t_driverconnect_outstring
+ok 19 - setnames
+ok 20 - setnames_conn
+ok 21 - sqlcancel_basic_use
+ok 22 - sqlcancel
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;
+# checking 0 (0)
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=69206018;SERVER=sidecar-mariadb-server-2;
+# checking 1 (2097152)
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108898;SERVER=sidecar-mariadb-server-2;
+# checking 2 (32)
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=69206050;SERVER=sidecar-mariadb-server-2;
+# checking 3 (2097184)
+ok 23 - t_bug32014
+# select 1,2,3,4
+# select 1,2,3,4 select 1,2,3,4
+ok 24 - t_bug10128
+ok 25 - t_bug32727
+# length: 90
+# length: 90
+# length: 90
+ok 26 - t_bug28820
+# READ-UNCOMMITTED READ-UNCOMMITTED
+# Level = READ-UNCOMMITTED
+
+# READ-COMMITTED READ-COMMITTED
+# Level = READ-COMMITTED
+
+# REPEATABLE-READ REPEATABLE-READ
+# Level = REPEATABLE-READ
+
+# SERIALIZABLE SERIALIZABLE
+# Level = SERIALIZABLE
+
+# HY024 HY024
+ok 27 - t_bug31959
+ok 28 - t_bug41256
+ok 29 - t_bug44971
+# Changing interactive timeout globally as it is equal to wait_timeout
+ok 30 - t_bug48603
+ok 31 - t_bug45378
+[42S02] (1146) [ma-3.1.23][11.8.6-MariaDB-ubu2404]Table 'test.t_reset_nonexistent' doesn't exist
+ok 32 - tmysqld_stmt_reset bug
+# Packet size is 8192
+ok 33 - odbc32_SQL_ATTR_PACKET_SIZE_option
+ok 34 - leading_space_gh_issue3
+ok 35 - odbc48_iso_call_format
+ok 36 - odbc69_ci_connstring
+# t_odbc91 t_odbc91
+# test test
+# test test
+# UnixODBC detected - Skipping part of the test
+ok 37 - odbc91_hdbc_reuse
+# Charset: latin1
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=latin1;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: cp850
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=cp850;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: cp1251
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=cp1251;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: cp866
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=cp866;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: cp852
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=cp852;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: cp1250
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=cp1250;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: latin2
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=latin2;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: latin5
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=latin5;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: latin7
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=latin7;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: cp1256
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=cp1256;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: cp1257
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=cp1257;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: geostd8
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=geostd8;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: greek
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=greek;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: koi8u
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=koi8u;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: koi8r
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=koi8r;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: hebrew
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=hebrew;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: macce
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=macce;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: macroman
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=macroman;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: dec8
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=dec8;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: hp8
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=hp8;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: armscii8
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=armscii8;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: ascii
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=ascii;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: swe7
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=swe7;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: tis620
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=tis620;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+# Charset: keybcs2
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;CHARSET=keybcs2;
+#  my_fetch_str: 	
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~ÄÅÇÉÑÖÜáàâäãåçéèêëíìîïñóòôöõúùûü†°¢£§•¶ß®©™´¨≠ÆØ∞±≤≥¥µ∂∑∏π∫ªºΩæø¿¡¬√ƒ≈∆«»… ÀÃÕŒœ–—“”‘’÷◊ÿŸ⁄€‹›ﬁﬂ‡·‚„‰ÂÊÁËÈÍÎÏÌÓÔÒÚÛÙıˆ˜¯˘˙˚¸˝˛ˇ(255)
+ok 38 - odbc137_ansi
+ok 39 - t_odbc162_CTE_query
+ok 40 - t_replace
+#  my_fetch_str: -0.0042(7)
+# -0.0042 -0.0042
+#  my_fetch_str: text ending with newline
+ some quetion ? end; and something after semicolon(76)
+# text ending with newline
+ some quetion ? end; and something after semicolon text ending with newline
+ some quetion ? end; and something after semicolon
+ok 41 - t_odbc181
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;NOLOCALINFILE=1
+# HY000 42000
+Strings do not match (File: /home/buildbot/odbc_build/source/test/tap.h Line: 769)
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;NOLOCALINFILE=0
+# 42S02 42S02
+ok 42 - odbc347_local_data_infile
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;INITSTMT={SELECT SLEEP(4)}
+[HYT00] (2013) [ma-3.1.23]Lost connection to server during query
+# HYT00 HYT00
+# DSN=maodbc_test;UID=root;PWD={********};PORT=3306;DATABASE=test;OPTION=67108866;SERVER=sidecar-mariadb-server-2;INITSTMT={SELECT SLEEP(2)};CONN_TIMEOUT=4
+ok 43 - odbc377_timeout_attrs
+ok 44 - odbc399_comment_only
+--------------------------------------------------------------
+Copy artifacts to docker host
+--------------------------------------------------------------
+'/home/buildbot/odbc_build/build/bintar/mariadb-connector-odbc-3.1.23-ce6120b28b48.tar.gz' -> '/out/bintar/mariadb-connector-odbc-3.1.23-ce6120b28b48.tar.gz'
+'/home/buildbot/odbc_build/build/deb/mariadb-connector-odbc_3.1.23-1+maria~noble_amd64.deb' -> '/out/deb/mariadb-connector-odbc_3.1.23-1+maria~noble_amd64.deb'
+Copied artifacts to /out:
+/out/bintar:
+total 59M
+drwxr-xr-x 2 buildbot buildbot 4.0K Feb 13 14:55 .
+drwxrwxr-x 4 buildbot     1000 4.0K Feb 12 12:17 ..
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:38 mariadb-connector-odbc-3.1.23-0687567a0502.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:40 mariadb-connector-odbc-3.1.23-098709fe5ea9.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:34 mariadb-connector-odbc-3.1.23-10905c6675b1.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:17 mariadb-connector-odbc-3.1.23-24d68550debf.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:06 mariadb-connector-odbc-3.1.23-292f65d53e91.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:16 mariadb-connector-odbc-3.1.23-2c40d9c5d11a.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:51 mariadb-connector-odbc-3.1.23-2f7f93e6a4e7.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:44 mariadb-connector-odbc-3.1.23-3114a61c3576.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:09 mariadb-connector-odbc-3.1.23-36d9821d8fdf.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:14 mariadb-connector-odbc-3.1.23-396df96c2faa.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:16 mariadb-connector-odbc-3.1.23-39abc42c77ec.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:36 mariadb-connector-odbc-3.1.23-4625e089418b.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:53 mariadb-connector-odbc-3.1.23-4efd1a0c7aaf.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:43 mariadb-connector-odbc-3.1.23-66678bd93f54.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:50 mariadb-connector-odbc-3.1.23-6721276aae1c.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:51 mariadb-connector-odbc-3.1.23-6808b4cf01bd.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:36 mariadb-connector-odbc-3.1.23-69c9f3cff046.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 12 12:16 mariadb-connector-odbc-3.1.23-7445dfc3b215.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:38 mariadb-connector-odbc-3.1.23-7fad22f0ea9b.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:47 mariadb-connector-odbc-3.1.23-7fd668a36153.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:33 mariadb-connector-odbc-3.1.23-80498d97b1c8.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:41 mariadb-connector-odbc-3.1.23-835defdbe6fb.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:46 mariadb-connector-odbc-3.1.23-86e64d7cb6d8.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:48 mariadb-connector-odbc-3.1.23-8b33c6382010.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:11 mariadb-connector-odbc-3.1.23-8e1c6cbbef77.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:50 mariadb-connector-odbc-3.1.23-9412a6a090fe.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:11 mariadb-connector-odbc-3.1.23-9a13ff4f9cf2.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:47 mariadb-connector-odbc-3.1.23-9d6d2c427288.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:44 mariadb-connector-odbc-3.1.23-9fc9df1fad9b.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:52 mariadb-connector-odbc-3.1.23-a56c3a50cf35.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:40 mariadb-connector-odbc-3.1.23-b0175b1f8da0.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:06 mariadb-connector-odbc-3.1.23-b7afdb9ace1f.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:14 mariadb-connector-odbc-3.1.23-c802221c0857.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:34 mariadb-connector-odbc-3.1.23-c8586b738cf6.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:09 mariadb-connector-odbc-3.1.23-ca7ffb330908.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:12 mariadb-connector-odbc-3.1.23-cdff656a19e2.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:54 mariadb-connector-odbc-3.1.23-ce6120b28b48.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:12 mariadb-connector-odbc-3.1.23-d1d02520759d.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:48 mariadb-connector-odbc-3.1.23-d9a407251df5.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:33 mariadb-connector-odbc-3.1.23-d9d75cdcc739.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:46 mariadb-connector-odbc-3.1.23-db3819937cfa.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:17 mariadb-connector-odbc-3.1.23-edaf768f9906.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:41 mariadb-connector-odbc-3.1.23-f430a311938d.tar.gz
+-rw-r--r-- 1 buildbot buildbot 1.4M Feb 13 14:43 mariadb-connector-odbc-3.1.23-fb7a0c058fad.tar.gz
+
+/out/deb:
+total 128K
+drwxr-xr-x 2 buildbot buildbot 4.0K Feb 12 12:17 .
+drwxrwxr-x 4 buildbot     1000 4.0K Feb 12 12:17 ..
+-rw-rw-r-- 1 buildbot buildbot 120K Feb 13 14:54 mariadb-connector-odbc_3.1.23-1+maria~noble_amd64.deb
+mariadb-connector-odbc-2
+def0fa59d8ad
+mariadb-connector-odbc-2
