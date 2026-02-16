@@ -11,9 +11,9 @@ BUILD_SLOT="${BUILD_SLOT:-0}"
 IMAGE=ubuntu24.04
 DEB_CLEAN_IMAGE=ubuntu:24.04
 BUILD_IMAGE="quay.io/mariadb-foundation/bb-worker:$IMAGE"
-GIT_REPO=https://github.com/MariaDB-Corporation/mariadb-connector-odbc.git
-GIT_BRANCH=odbc-3.1
-GIT_COMMIT=3d62dc272b682247191730ba88a4a39d756fe39a
+export GIT_REPO=https://github.com/MariaDB-Corporation/mariadb-connector-odbc.git
+export GIT_BRANCH=odbc-3.1
+export GIT_COMMIT=3d62dc272b682247191730ba88a4a39d756fe39a
 
 # Save tar / deb artifacts to host
 SAVE_TO_HOST_ARTIFACTS_DIR="/home/razvan/tmp/odbc-artifacts/$GIT_BRANCH/$GIT_COMMIT/$IMAGE"
@@ -34,15 +34,15 @@ TEST_DRIVER=maodbc_test
 TEST_DSN=maodbc_test
 
 # System config
-NETWORK_NAME="mariadb-connector-odbc-$BUILD_SLOT"
-VOLUME_NAME="mariadb-connector-odbc-$BUILD_SLOT"
-CONTAINER_NAME="mariadb-connector-odbc-$BUILD_SLOT"
-VOLUME_MOUNT_POINT=/home/buildbot
-BASE_DIR="$VOLUME_MOUNT_POINT/odbc_build"
-SOURCE_DIR="$BASE_DIR/source"
-BUILD_DIR="$BASE_DIR/build"
-BINTAR_DIR="$BUILD_DIR/bintar"
-DEB_DIR="$BUILD_DIR/deb"
+export NETWORK_NAME="mariadb-connector-odbc-$BUILD_SLOT"
+export VOLUME_NAME="mariadb-connector-odbc-$BUILD_SLOT"
+export CONTAINER_NAME="mariadb-connector-odbc-$BUILD_SLOT"
+export VOLUME_MOUNT_POINT=/home/buildbot
+export BASE_DIR="$VOLUME_MOUNT_POINT/odbc_build"
+export SOURCE_DIR="$BASE_DIR/source"
+export BUILD_DIR="$BASE_DIR/build"
+export BINTAR_DIR="$BUILD_DIR/bintar"
+export DEB_DIR="$BUILD_DIR/deb"
 
 cleanup_resource () {
   # Docker volume
@@ -72,16 +72,17 @@ docker run \
   -d \
   $SIDECAR
 
-# sleep 10 # Wait for the server to be up and running
+
+# Prepare source and CI tgz
+bash create_source.sh
+
 
 echo "--------------------------------------------------------------"
-echo "Get source"
+echo "Unpack CI tgz to prepare for build"
 echo "--------------------------------------------------------------"
 docker run \
-  -e GIT_REPO=$GIT_REPO \
-  -e GIT_COMMIT=$GIT_COMMIT \
-  -e GIT_BRANCH=$GIT_BRANCH \
   -e SOURCE_DIR=$SOURCE_DIR \
+  -e VOLUME_MOUNT_POINT=$VOLUME_MOUNT_POINT \
   -v $VOLUME_NAME:$VOLUME_MOUNT_POINT \
   -w $VOLUME_MOUNT_POINT \
   --network $NETWORK_NAME \
@@ -90,9 +91,7 @@ docker run \
   $BUILD_IMAGE \
   bash -ec '
     mkdir -p $SOURCE_DIR
-    cd $SOURCE_DIR
-    git clone -b $GIT_BRANCH $GIT_REPO .
-    git reset --hard $GIT_COMMIT
+    tar -xzf $VOLUME_MOUNT_POINT/odbc-src-with-cc-tests-*.tgz -C $SOURCE_DIR --strip-components=1
   '
 
 echo "--------------------------------------------------------------"
