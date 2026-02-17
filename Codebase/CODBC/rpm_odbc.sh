@@ -390,7 +390,7 @@ docker run \
   --rm \
   --name $CONTAINER_NAME \
   -u root \
-  $BUILD_IMAGE \
+  $SRPM_IMAGE \
   bash -ec '
     for script_url in $SRPM_SCRIPT_DOWNLOAD_URLS; do
       script_name=$(basename "$script_url")
