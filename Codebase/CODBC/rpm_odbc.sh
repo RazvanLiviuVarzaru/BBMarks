@@ -8,7 +8,7 @@ MAKE_PARALLEL="${MAKE_PARALLEL:-4}"
 BUILD_SLOT="${BUILD_SLOT:-0}"
 
 # User config
-IMAGE=fedora42
+IMAGE=rhel9
 BUILD_IMAGE="quay.io/mariadb-foundation/bb-worker:$IMAGE"
 export GIT_REPO=https://github.com/MariaDB-Corporation/mariadb-connector-odbc.git
 export GIT_BRANCH=master
@@ -79,7 +79,6 @@ host_is_rhel() {
 RHEL_SECRET_MOUNTS=(
   -v /etc/rhsm:/etc/rhsm:ro
   -v /etc/pki/entitlement:/etc/pki/entitlement:ro
-  -v /etc/yum.repos.d:/etc/yum.repos.d:ro
 )
 
 EXTRA_DOCKER_ARGS=()
@@ -169,6 +168,9 @@ echo "--------------------------------------------------------------"
 # and force the build to link against it by setting -DUSE_SYSTEM_INSTALLED_LIB=ON
 # and also -DMARIADB_LINK_DYNAMIC=On to avoid linking against the static library if both static and dynamic are present.
 
+# C/C needs to be a recent version, otherwise C/ODBC build will fail if distro default C/C is old enough.
+# This is why mariadb-devel is installed from mariadb.org repositories
+
 docker run \
   -e MAKE_PARALLEL=$MAKE_PARALLEL \
   -e RPM_DIR=$RPM_DIR \
@@ -182,17 +184,69 @@ docker run \
   -u root \
   $BUILD_IMAGE \
   bash -ec '
-      dnf install -y mariadb-devel || yum install -y MariaDB-devel || zypper install -y MariaDB-shared
-      su - buildbot -c "
-        set -e
-        mkdir -p $RPM_DIR
-        cd $RPM_DIR
-        cmake -DRPM=On -DUSE_SYSTEM_INSTALLED_LIB=ON -DCPACK_GENERATOR=RPM -DCMAKE_BUILD_TYPE=RelWithDebInfo -DMARIADB_LINK_DYNAMIC=On -DPACKAGE_PLATFORM_SUFFIX=$HOSTNAME $SOURCE_DIR
-        cmake --build . --config RelWithDebInfo --target package --parallel $MAKE_PARALLEL
-        make package_source
-        ls -l *rpm
-        rpm -qpR *src.rpm
-      "
+    source /etc/os-release
+
+    rpm_repo_dir() {
+      set +u
+      if [[ $ID_LIKE =~ ^suse* ]]; then
+        echo "/etc/zypp/repos.d"
+      else
+        echo "/etc/yum.repos.d"
+      fi
+      set -u
+    }
+
+    rpm_pkg() {
+      set +u
+      if [[ $ID_LIKE =~ ^suse* ]]; then
+        echo zypper
+      else
+        if command -v dnf >/dev/null; then
+          echo dnf
+        elif command -v yum >/dev/null; then
+          echo yum
+        fi
+      fi
+      set -u
+    }
+
+    case $ID in
+      rhel|almalinux|rocky)
+        base_version=${VERSION_ID%%.*}
+        ;;
+      *)
+        base_version=$VERSION_ID
+        ;;
+    esac
+
+    base_id=$ID
+    url_path="$base_id/$base_version/$(rpm --eval "%_arch")"
+    baseurl="https://rpm.mariadb.org/11.8/$url_path"
+
+    tee "$(rpm_repo_dir)/MariaDB.repo" >/dev/null <<EOF
+[mariadb]
+name=MariaDB
+baseurl=$baseurl
+# //TEMP following is not needed for all OS
+# - rhel8 based OS (almalinux 8, rockylinux 8, centos 8)
+module_hotfixes = 1
+gpgkey=https://rpm.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+EOF
+
+    pkg=$(rpm_pkg)
+    "$pkg" install -y mariadb-devel || "$pkg" install -y MariaDB-devel || "$pkg" install -y MariaDB-shared
+
+    su - buildbot -c "
+      set -e
+      mkdir -p $RPM_DIR
+      cd $RPM_DIR
+      cmake -DRPM=On -DUSE_SYSTEM_INSTALLED_LIB=ON -DCPACK_GENERATOR=RPM -DCMAKE_BUILD_TYPE=RelWithDebInfo -DMARIADB_LINK_DYNAMIC=On -DPACKAGE_PLATFORM_SUFFIX=$HOSTNAME $SOURCE_DIR
+      cmake --build . --config RelWithDebInfo --target package --parallel $MAKE_PARALLEL
+      make package_source
+      ls -l *rpm
+      rpm -qpR *src.rpm
+    "
   '
 
 echo "--------------------------------------------------------------"
@@ -248,6 +302,57 @@ docker run \
   -u root \
   $SRPM_IMAGE \
   bash -ec '
+
+    source /etc/os-release
+
+    rpm_repo_dir() {
+      set +u
+      if [[ $ID_LIKE =~ ^suse* ]]; then
+        echo "/etc/zypp/repos.d"
+      else
+        echo "/etc/yum.repos.d"
+      fi
+      set -u
+    }
+
+    rpm_pkg() {
+      set +u
+      if [[ $ID_LIKE =~ ^suse* ]]; then
+        echo zypper
+      else
+        if command -v dnf >/dev/null; then
+          echo dnf
+        elif command -v yum >/dev/null; then
+          echo yum
+        fi
+      fi
+      set -u
+    }
+
+    case $ID in
+      rhel|almalinux|rocky)
+        base_version=${VERSION_ID%%.*}
+        ;;
+      *)
+        base_version=$VERSION_ID
+        ;;
+    esac
+
+    base_id=$ID
+    url_path="$base_id/$base_version/$(rpm --eval "%_arch")"
+    baseurl="https://rpm.mariadb.org/11.8/$url_path"
+
+    tee "$(rpm_repo_dir)/MariaDB.repo" >/dev/null <<EOF
+[mariadb]
+name=MariaDB
+baseurl=$baseurl
+# //TEMP following is not needed for all OS
+# - rhel8 based OS (almalinux 8, rockylinux 8, centos 8)
+module_hotfixes = 1
+gpgkey=https://rpm.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+EOF
+
     cd $RPM_DIR
     dnf install -y *rpm
     cd $RPM_DIR/test
@@ -297,6 +402,57 @@ docker run \
       fi
       chmod +x "$script_name"
     done
+
+    source /etc/os-release
+
+    rpm_repo_dir() {
+      set +u
+      if [[ $ID_LIKE =~ ^suse* ]]; then
+        echo "/etc/zypp/repos.d"
+      else
+        echo "/etc/yum.repos.d"
+      fi
+      set -u
+    }
+
+    rpm_pkg() {
+      set +u
+      if [[ $ID_LIKE =~ ^suse* ]]; then
+        echo zypper
+      else
+        if command -v dnf >/dev/null; then
+          echo dnf
+        elif command -v yum >/dev/null; then
+          echo yum
+        fi
+      fi
+      set -u
+    }
+
+    case $ID in
+      rhel|almalinux|rocky)
+        base_version=${VERSION_ID%%.*}
+        ;;
+      *)
+        base_version=$VERSION_ID
+        ;;
+    esac
+
+    base_id=$ID
+    url_path="$base_id/$base_version/$(rpm --eval "%_arch")"
+    baseurl="https://rpm.mariadb.org/11.8/$url_path"
+
+    tee "$(rpm_repo_dir)/MariaDB.repo" >/dev/null <<EOF
+[mariadb]
+name=MariaDB
+baseurl=$baseurl
+# //TEMP following is not needed for all OS
+# - rhel8 based OS (almalinux 8, rockylinux 8, centos 8)
+module_hotfixes = 1
+gpgkey=https://rpm.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+EOF
+
     ./$SRPM_DEPS_SCRIPT $RPM_DIR
     ./$SRPM_REBUILD_SCRIPT $RPM_DIR $MAKE_PARALLEL
      mkdir -p /tmp/ci
