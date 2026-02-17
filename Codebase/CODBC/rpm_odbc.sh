@@ -354,7 +354,7 @@ gpgcheck=1
 EOF
 
     cd $RPM_DIR
-    dnf install -y *rpm
+    dnf install -y $(ls *.rpm | grep -v '\.src\.rpm$')
     cd $RPM_DIR/test
     export ODBCINI="$PWD/odbc.ini"
     export ODBCSYSINI=$PWD
