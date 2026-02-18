@@ -125,6 +125,9 @@ echo "--------------------------------------------------------------"
 # and force the build to link against it by setting -DUSE_SYSTEM_INSTALLED_LIB=ON
 # and also -DMARIADB_LINK_DYNAMIC=On to avoid linking against the static library if both static and dynamic are present.
 
+# C/C needs to be a recent version, otherwise C/ODBC build will fail if distro default C/C is old enough.
+# This is why libmariadb-dev is installed from mariadb.org repositories
+
 docker run \
   -e MAKE_PARALLEL=$MAKE_PARALLEL \
   -e DEB_DIR=$DEB_DIR \
@@ -137,7 +140,18 @@ docker run \
   -u root \
   $BUILD_IMAGE \
   bash -ec '
-      apt update && apt install -y libmariadb-dev
+      source /etc/os-release
+      baseurl="https://deb.mariadb.org/11.8"
+      sh -c "echo \"deb $baseurl/$ID $VERSION_CODENAME main\" >/etc/apt/sources.list.d/mariadb.list"
+      tee /etc/apt/preferences.d/mariadb >/dev/null <<EOF
+Package: *
+Pin: origin deb.mariadb.org
+Pin-Priority: 700
+EOF
+      wget https://mariadb.org/mariadb_release_signing_key.asc -O /etc/apt/trusted.gpg.d/mariadb_release_signing_key.asc
+
+      apt-get update
+      apt install -y libmariadb-dev
       su - buildbot -c "
         set -e
         mkdir -p $DEB_DIR
@@ -205,8 +219,21 @@ docker run \
   -u root \
   $DEB_CLEAN_IMAGE \
   bash -ec '
+      apt-get update && apt-get install -y wget
+      source /etc/os-release
+      baseurl="https://deb.mariadb.org/11.8"
+      sh -c "echo \"deb $baseurl/$ID $VERSION_CODENAME main\" >/etc/apt/sources.list.d/mariadb.list"
+      tee /etc/apt/preferences.d/mariadb >/dev/null <<EOF
+Package: *
+Pin: origin deb.mariadb.org
+Pin-Priority: 700
+EOF
+      wget https://mariadb.org/mariadb_release_signing_key.asc -O /etc/apt/trusted.gpg.d/mariadb_release_signing_key.asc
+
+      apt-get update
+
     cd $DEB_DIR
-    apt update && apt install -y ./*.deb
+    apt install -y ./*.deb
     apt install -y libodbc2
     cd $DEB_DIR/test
     export ODBCINI="$PWD/odbc.ini"
