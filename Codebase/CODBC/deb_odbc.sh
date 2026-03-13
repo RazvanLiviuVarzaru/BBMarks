@@ -110,7 +110,7 @@ docker run \
   bash -ec '
     mkdir -p $BINTAR_DIR
     cd $BINTAR_DIR
-    cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCONC_WITH_UNIT_TESTS=Off -DPACKAGE_PLATFORM_SUFFIX=$HOSTNAME $SOURCE_DIR
+    cmake -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCONC_WITH_UNIT_TESTS=Off -DPACKAGE_PLATFORM_SUFFIX=$HOSTNAME $SOURCE_DIR
     cmake --build . --config RelWithDebInfo --target package --parallel $MAKE_PARALLEL
     ls -l *.tar.gz
   '
@@ -156,7 +156,7 @@ EOF
         set -e
         mkdir -p $DEB_DIR
         cd $DEB_DIR
-        cmake -DDEB=On -DUSE_SYSTEM_INSTALLED_LIB=ON -DCPACK_GENERATOR=DEB -DCMAKE_BUILD_TYPE=RelWithDebInfo -DMARIADB_LINK_DYNAMIC=On -DPACKAGE_PLATFORM_SUFFIX=$HOSTNAME $SOURCE_DIR
+        cmake -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DDEB=On -DUSE_SYSTEM_INSTALLED_LIB=ON -DCPACK_GENERATOR=DEB -DCMAKE_BUILD_TYPE=RelWithDebInfo -DMARIADB_LINK_DYNAMIC=On -DPACKAGE_PLATFORM_SUFFIX=$HOSTNAME $SOURCE_DIR
         cmake --build . --config RelWithDebInfo --target package --parallel $MAKE_PARALLEL --verbose
         ls -l *deb
         dpkg -I *deb || true

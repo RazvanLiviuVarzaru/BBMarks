@@ -8,7 +8,7 @@ MAKE_PARALLEL="${MAKE_PARALLEL:-4}"
 BUILD_SLOT="${BUILD_SLOT:-0}"
 
 # User config
-IMAGE=rhel9
+IMAGE=fedora42
 BUILD_IMAGE="quay.io/mariadb-foundation/bb-worker:$IMAGE"
 export GIT_REPO=https://github.com/MariaDB-Corporation/mariadb-connector-odbc.git
 export GIT_BRANCH=master
@@ -150,11 +150,12 @@ docker run \
   --network $NETWORK_NAME \
   --rm \
   --name $CONTAINER_NAME \
+  --user buildbot \
   $BUILD_IMAGE \
   bash -ec '
     mkdir -p $BINTAR_DIR
     cd $BINTAR_DIR
-    cmake -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCONC_WITH_UNIT_TESTS=Off -DPACKAGE_PLATFORM_SUFFIX=$HOSTNAME $SOURCE_DIR
+    cmake -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCONC_WITH_UNIT_TESTS=Off -DPACKAGE_PLATFORM_SUFFIX=$HOSTNAME $SOURCE_DIR
     cmake --build . --config RelWithDebInfo --target package --parallel $MAKE_PARALLEL
     ls -l *.tar.gz
   '
@@ -234,6 +235,10 @@ gpgkey=https://rpm.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 EOF
 
+    if [[ $ID_LIKE =~ ^suse* ]]; then
+      zypper --gpg-auto-import-keys refresh mariadb
+    fi
+
     pkg=$(rpm_pkg)
     "$pkg" install -y mariadb-devel || "$pkg" install -y MariaDB-devel || "$pkg" install -y MariaDB-shared
 
@@ -241,9 +246,9 @@ EOF
       set -e
       mkdir -p $RPM_DIR
       cd $RPM_DIR
-      cmake -DRPM=On -DUSE_SYSTEM_INSTALLED_LIB=ON -DCPACK_GENERATOR=RPM -DCMAKE_BUILD_TYPE=RelWithDebInfo -DMARIADB_LINK_DYNAMIC=On -DPACKAGE_PLATFORM_SUFFIX=$HOSTNAME $SOURCE_DIR
-      cmake --build . --config RelWithDebInfo --target package --parallel $MAKE_PARALLEL
-      make package_source
+      cmake -DCMAKE_C_COMPILER_LAUNCHER=ccache -DCMAKE_CXX_COMPILER_LAUNCHER=ccache -DRPM=On -DUSE_SYSTEM_INSTALLED_LIB=ON -DCPACK_GENERATOR=RPM -DCMAKE_BUILD_TYPE=RelWithDebInfo -DMARIADB_LINK_DYNAMIC=On -DPACKAGE_PLATFORM_SUFFIX=$HOSTNAME $SOURCE_DIR
+      cmake --build . --target package_source --parallel $MAKE_PARALLEL
+      cmake --build . --target package --parallel $MAKE_PARALLEL
       ls -l *rpm
       rpm -qpR *src.rpm
     "
@@ -268,6 +273,7 @@ docker run \
   --network $NETWORK_NAME \
   --rm \
   --name $CONTAINER_NAME \
+  --user buildbot \
   $BUILD_IMAGE \
   bash -ec '
     cd $BINTAR_DIR/test
@@ -354,7 +360,13 @@ gpgcheck=1
 EOF
 
     cd $RPM_DIR
-    dnf install -y $(ls *.rpm | grep -v '\.src\.rpm$')
+    if [[ $ID_LIKE =~ ^suse* ]]; then
+      zypper --gpg-auto-import-keys refresh mariadb
+      zypper --no-gpg-checks install -y  $(ls *.rpm | grep -v '\.src\.rpm$')
+    fi
+      dnf install -y $(ls *.rpm | grep -v '\.src\.rpm$')
+
+    $pkg install -y $(ls *.rpm | grep -v '\.src\.rpm$')
     cd $RPM_DIR/test
     export ODBCINI="$PWD/odbc.ini"
     export ODBCSYSINI=$PWD
@@ -452,6 +464,10 @@ module_hotfixes = 1
 gpgkey=https://rpm.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 EOF
+
+      if [[ $ID_LIKE =~ ^suse* ]]; then
+        zypper --gpg-auto-import-keys refresh mariadb
+      fi
 
     ./$SRPM_DEPS_SCRIPT $RPM_DIR
     ./$SRPM_REBUILD_SCRIPT $RPM_DIR $MAKE_PARALLEL
