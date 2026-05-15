@@ -8,7 +8,7 @@ MAKE_PARALLEL="${MAKE_PARALLEL:-4}"
 BUILD_SLOT="${BUILD_SLOT:-0}"
 
 # User config
-IMAGE=fedora42
+IMAGE=rhel10
 BUILD_IMAGE="quay.io/mariadb-foundation/bb-worker:$IMAGE"
 export GIT_REPO=https://github.com/mariadb-corporation/mariadb-connector-c.git
 export GIT_BRANCH=3.4
