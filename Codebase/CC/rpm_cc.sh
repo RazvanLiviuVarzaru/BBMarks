@@ -8,7 +8,7 @@ MAKE_PARALLEL="${MAKE_PARALLEL:-4}"
 BUILD_SLOT="${BUILD_SLOT:-0}"
 
 # User config
-IMAGE=rhel10
+IMAGE=dev_fedora44
 BUILD_IMAGE="quay.io/mariadb-foundation/bb-worker:$IMAGE"
 export GIT_REPO=https://github.com/mariadb-corporation/mariadb-connector-c.git
 export GIT_BRANCH=3.4
@@ -23,7 +23,7 @@ SIDECAR_NAME="sidecar-mariadb-server-$BUILD_SLOT"
 
 # Test config
 MYSQL_TEST_USER=root
-MYSQL_TEST_PASSWD=
+MYSQL_TEST_PASSWD=test
 MYSQL_TEST_PORT=3306
 MYSQL_TEST_HOST=$SIDECAR_NAME
 MYSQL_TEST_DB=test
@@ -63,9 +63,10 @@ docker volume create $VOLUME_NAME
 echo "Creating docker network $NETWORK_NAME"
 docker network create $NETWORK_NAME
 
+#  -e MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1 \
 # Sidecar
 docker run \
-  -e MARIADB_ALLOW_EMPTY_ROOT_PASSWORD=1 \
+  -e MARIADB_ROOT_PASSWORD=test \
   -e MARIADB_DATABASE=test \
   --network $NETWORK_NAME \
   --rm \
