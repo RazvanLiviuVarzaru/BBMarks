@@ -10,13 +10,13 @@ BUILD_SLOT="${BUILD_SLOT:-0}"
 # User config
 IMAGE=dev_debian13-msan-clang-22
 BUILD_IMAGE="quay.io/mariadb-foundation/bb-worker:$IMAGE"
-export GIT_REPO=https://github.com/RazvanLiviuVarzaru/mariadb-connector-c.git
-export GIT_BRANCH=msan-ubsan-asan-test
-export GIT_COMMIT=c81d3947654717d4a62efab15548452f82ce8a48
+export GIT_REPO=https://github.com/mariadb-corporation/mariadb-connector-c.git
+export GIT_BRANCH=3.3
+export GIT_COMMIT=c44bc3b37775475cb609393bf9dc9c7f5e42db7c
 
 # Save tar / deb artifacts to host
 SAVE_TO_HOST_ARTIFACTS_DIR="/home/razvan/tmp/cpp-artifacts/$GIT_BRANCH/$GIT_COMMIT/$IMAGE"
-SAVE_ARTIFACTS=1 # 1 to save, 0 to skip saving
+SAVE_ARTIFACTS=0 # 1 to save, 0 to skip saving
 
 # Sidecar config
 SIDECAR=mariadb:lts
@@ -139,7 +139,7 @@ docker run \
     export ASAN_OPTIONS="detect_stack_use_after_return=1:detect_leaks=1:abort_on_error=1:atexit=0:detect_invalid_pointer_pairs=3:dump_instruction_bytes=1:allocator_may_return_null=1"
     export UBSAN_OPTIONS="print_stacktrace=1:report_error_type=1:halt_on_error=1"
     cd $BINTAR_DIR/unittest/libmariadb
-    ctest --output-on-failure
+    ctest -V --output-on-failure
   '
 
 if [ "$SAVE_ARTIFACTS" -eq 1 ]; then
