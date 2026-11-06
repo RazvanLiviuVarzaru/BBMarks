@@ -78,6 +78,37 @@ psi_total() {
 }
 
 #######################################
+# Prints the container's cumulative CPU and block I/O from its cgroup.
+# With stacked devices (dm over nvme) the same I/O is counted on each
+# layer, so the largest value across devices is taken.
+# Globals:
+#   container
+# Outputs:
+#   "user_s sys_s read_mb write_mb read_ios write_ios", nothing if the
+#   cgroup v2 files are unavailable.
+#######################################
+cgroup_stat() {
+  docker exec "${container}" \
+    cat /sys/fs/cgroup/cpu.stat /sys/fs/cgroup/io.stat 2>/dev/null \
+    | awk '
+      $1 == "user_usec" { u = $2 }
+      $1 == "system_usec" { s = $2 }
+      /rbytes=/ {
+        for (f = 2; f <= NF; f++) {
+          split($f, kv, "=")
+          if (kv[2] > io[kv[1]]) io[kv[1]] = kv[2]
+        }
+      }
+      END {
+        if (u == "") exit
+        printf "%.3f %.3f %.1f %.1f %d %d\n", u / 1e6, s / 1e6,
+          io["rbytes"] / 1048576, io["wbytes"] / 1048576,
+          io["rios"], io["wios"]
+      }' \
+    || true
+}
+
+#######################################
 # Runs a command in the container as one timed phase.
 # Globals:
 #   container, out
@@ -92,32 +123,37 @@ psi_total() {
 run_phase() {
   local iter="$1" phase="$2" cmd="$3"
   local logfile="${out}/${phase}-${iter}.log"
-  local io0 cpu0 io1 cpu1 t0 t1 times user sys
+  local io0 cpu0 cg0 io1 cpu1 cg1 t0 t1
   local rc=0
 
   log "iteration ${iter}: ${phase}"
   io0="$(psi_total io)"
   cpu0="$(psi_total cpu)"
+  cg0="$(cgroup_stat)"
   t0="$(date +%s.%N)"
-  times="$(docker exec "${container}" bash -c \
-    "TIMEFORMAT='%U %S'; { time ( ${cmd} ) >/tmp/phase.log 2>&1; } 2>&1")" \
-    || rc=$?
+  docker exec "${container}" bash -c "( ${cmd}
+    ) >/tmp/phase.log 2>&1" || rc=$?
   t1="$(date +%s.%N)"
+  cg1="$(cgroup_stat)"
   io1="$(psi_total io)"
   cpu1="$(psi_total cpu)"
   docker cp "${container}:/tmp/phase.log" "${logfile}" >/dev/null 2>&1 \
     || true
 
-  read -r user sys <<<"${times:-- -}"
   awk -v i="${iter}" -v p="${phase}" -v t0="${t0}" -v t1="${t1}" \
-    -v u="${user}" -v s="${sys}" -v io0="${io0}" -v io1="${io1}" \
+    -v cg0="${cg0}" -v cg1="${cg1}" -v io0="${io0}" -v io1="${io1}" \
     -v c0="${cpu0}" -v c1="${cpu1}" -v rc="${rc}" '
-    function d(a, b) {
-      return (a == "" || b == "") ? "-" : sprintf("%.3f", b - a)
+    function d(a, b, fmt) {
+      return (a == "" || b == "") ? "-" : sprintf(fmt, b - a)
     }
     BEGIN {
-      printf "%s\t%s\t%.3f\t%s\t%s\t%s\t%s\t%s\n",
-        i, p, t1 - t0, u, s, d(io0, io1), d(c0, c1), rc
+      split(cg0, a, " ")
+      split(cg1, b, " ")
+      cg = ""
+      for (f = 1; f <= 6; f++)
+        cg = cg "\t" d(a[f], b[f], (f <= 4) ? "%.1f" : "%d")
+      printf "%s\t%s\t%.3f%s\t%s\t%s\t%s\n",
+        i, p, t1 - t0, cg, d(io0, io1, "%.3f"), d(c0, c1, "%.3f"), rc
     }' >>"${out}/phases.tsv"
   log "iteration ${iter}: ${phase} done in" \
     "$(awk -v a="${t0}" -v b="${t1}" 'BEGIN { printf "%.1f", b - a }')s" \
@@ -159,7 +195,7 @@ write_env() {
     echo "nproc:          $(nproc)"
     echo "memory:         $(free -h | awk '/^Mem:/ { print $2 }')"
     echo "kernel:         $(uname -r)"
-    echo "virtualization: $(systemd-detect-virt 2>/dev/null || echo unknown)"
+    echo "virtualization: $(systemd-detect-virt 2>/dev/null || true)"
     echo "docker:         $(docker version --format '{{.Server.Version}}')"
     echo "storage driver: $(docker info --format '{{.Driver}}')"
     echo "docker root:    ${docker_root}"
@@ -296,9 +332,9 @@ main() {
   log "pulling ${image}"
   docker pull -q "${image}" >/dev/null
   write_env
-  printf 'iteration\tphase\twall_s\tuser_s\tsys_s\tio_stall_s' \
-    >"${out}/phases.tsv"
-  printf '\tcpu_stall_s\texit\n' >>"${out}/phases.tsv"
+  printf '%s\t' iteration phase wall_s user_s sys_s read_mb write_mb \
+    read_ios write_ios io_stall_s cpu_stall_s >"${out}/phases.tsv"
+  printf 'exit\n' >>"${out}/phases.tsv"
 
   for (( i = 1; i <= iterations; i++ )); do
     run_iteration "${i}" || err "iteration ${i} aborted"

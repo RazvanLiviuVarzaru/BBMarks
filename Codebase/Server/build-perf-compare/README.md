@@ -50,8 +50,10 @@ Each run writes to its `--out` directory:
 
 - `env.txt`: CPU, memory, kernel, virtualization, docker storage and the
   backing device, image digest, commit
-- `phases.tsv`: per phase wall, user and sys seconds, and host PSI stall
-  seconds (`/proc/pressure/io` and `cpu`)
+- `phases.tsv`: per phase wall seconds; the container's CPU (user, sys) and
+  block I/O (MB and operations read and written) from its cgroup; and host
+  PSI stall seconds (`/proc/pressure/io` and `cpu`, `-` when the kernel has
+  PSI disabled, as RHEL does by default; boot with `psi=1` to enable it)
 - `summary.tsv`: median wall time per phase
 - `mtr-{serial,parallel}-<i>.tsv`: per test result and milliseconds
 - `<phase>-<i>.log`: raw output
